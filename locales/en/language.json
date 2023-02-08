@@ -1,0 +1,40 @@
+{
+  "header": {
+    "name": "tsredi",
+    "about": "ABOUT US",
+    "services": "SERVICES",
+    "contact": "CONTACT",
+    "careers": "CAREER"
+  },
+  "hero": {
+    "text1": "WE HELP BRANDS",
+    "text2": "GROW",
+    "button": "CONTACT US"
+  },
+  "brands": {
+    "header": "World's best digital marketing agency"
+  },
+  "services": {
+    "header": "Services"
+  },
+  "testimonials": {
+    "header": "Testimonials"
+  },
+  "contact": {
+    "header": "CONTACT US!",
+    "name": "Name",
+    "email": "E-Mail",
+    "subject": "Subject",
+    "message": "message",
+    "button": "SUBMIT"
+  },
+  "vacancies": {
+    "header": "OPEN JOBS",
+    "text": "FIND OUR VACANCIES BELOW",
+    "vacancie1": "ADVERTISER"
+  },
+  "about": {
+    "header": "ABOUT US",
+    "text": "lorem ipsum"
+  }
+}
