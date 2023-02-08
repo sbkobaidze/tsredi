@@ -11,10 +11,11 @@ const { languages, defaultLanguage } = require("./language")
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Tsredi | Web Development & Digital Marketing Agency `,
+    description:
+      "Transform your online presence with our comprehensive digital marketing services. Tsredi specializes in Search Engine Marketing, Social Media Marketing, UI/UX design, Blockchain Development, Game Development, App Development, Web Development, and Email Marketing. Partner with us to drive traffic, increase conversions and achieve your business goals.",
+    author: `@sbkobiadze`,
+    siteUrl: `https://tsredi.com/`,
   },
   plugins: [
     `gatsby-plugin-image`,
