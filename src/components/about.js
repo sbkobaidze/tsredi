@@ -22,7 +22,7 @@ const About = () => {
           ></path>
         </svg>
       </div>
-      <div className=" w-[80%]  m-[auto] bg-secondary  h-[auto] flex  max-[900px]:flex-col  max-[900px]:h-[80%] rounded-md ">
+      <div className=" w-[80%]  m-[auto] bg-secondary  h-[auto] flex  max-[900px]:flex-col  max-[900px]:h-[80%] rounded-md overflow-y-scroll ">
         <div className="img w-[40%]    max-[700px]:w-[100%] max-[900px]:w-[70%]   h-full p-10  ">
           <StaticImage
             src={"../images/blob.png"}

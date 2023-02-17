@@ -2,7 +2,6 @@ import * as React from "react"
 
 import Header from "../components/header"
 import "../components/layout.css"
-import Seo from "../components/seo"
 import { graphql } from "gatsby"
 import Hero from "../components/hero"
 import Services from "../components/services"
@@ -36,11 +35,53 @@ const IndexPage = () => {
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = () => (
-  <div>
-    <Seo title="TEST" /> <title>TEST</title>
-  </div>
-)
+  <>
+    <title>Tsredi - Multidisciplinary Digital Agency</title>
+    <meta
+      name="description"
+      content=" Looking to improve your online presence? Tsredi's digital marketing
+      services have got you covered! We specialize in Search Engine Marketing,
+      Social Media Marketing, UI/UX design, Blockchain Development, Game
+      Development, App Development, Web Development, and Email Marketing.
+      Partner with us to drive traffic, increase conversions, and achieve your
+      business goals. Transform your online presence with Tsredi's comprehensive
+      digital marketing services. Contact us today!"
+    />
+    <meta property="og:type" content="blog" />
+    <meta
+      property="og:image"
+      content="https://tsredi.com/icons/icon-48x48.png?v=3ce5c222fe783d169e44f134f9439616"
+    />
+    <meta property="og:site_name" content="Tsredi" />
+    <meta
+      property="og:title"
+      content="Tsredi - Multidisciplinary Digital Agency From Georgia"
+    />
+    <meta
+      property="og:description"
+      content="We specialize in Search Engine Marketing,
+    Social Media Marketing, UI/UX design, Blockchain Development, Game
+    Development, App Development, Web Development, and Email Marketing."
+    />
 
+    <meta name="twitter:site" content="@tsredi"></meta>
+    <meta name="twitter:creatoer" content="@tsredi"></meta>
+    <meta
+      name="twitter:title"
+      content="Tsredi - Multidisciplinary Digital Agency From Georgia"
+    ></meta>
+    <meta
+      name="twitter:description"
+      content="We specialize in Search Engine Marketing,
+    Social Media Marketing, UI/UX design, Blockchain Development, Game
+    Development, App Development, Web Development, and Email Marketing."
+    ></meta>
+    <meta
+      property="twitter:image:src"
+      content="https://tsredi.com/icons/icon-48x48.png?v=3ce5c222fe783d169e44f134f9439616"
+    />
+  </>
+)
 export default IndexPage
 
 export const query = graphql`

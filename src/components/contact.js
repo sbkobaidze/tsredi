@@ -51,7 +51,7 @@ const Contact = forwardRef((_, ref) => {
   }
   return (
     <div
-      className="spacer layer2 h-[80vh] 2xl:h-[70vh] relative  dark:bg-black w-full "
+      className="spacer layer2 h-[90vh] 2xl:h-[75vh] relative  dark:bg-black w-full "
       ref={ref}
       id="contact"
     >
@@ -69,7 +69,7 @@ const Contact = forwardRef((_, ref) => {
         </svg>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="input absolute h-[auto] max-[640px]:h-[60vh]  backdrop-blur  rounded-xl top-[15%] p-2 w-[50vw] max-[640px]:w-[80vw]  border-2 border-white">
+        <div className="input absolute h-[auto] max-[640px]:h-[auto]  backdrop-blur  rounded-xl top-[15%] p-2 w-[50vw] max-[640px]:w-[80vw]  border-2 border-white">
           <h1 className="text-white text-3xl font-main font-semibold text-center my-5  max-[900px]:my-2 ">
             {t("contact.header")}
           </h1>

@@ -12,7 +12,7 @@ const Brands = () => {
   return (
     <div className="w-full bg-secondary h-auto">
       <div className="font-semibold text-4xl text-center text-textcolor font-main mx-6 max-[800px]:mx-0 py-3 tracking-[4px] max-[640px]:text-2xl max-[900px]:text-3xl">
-        <h1>{t("brands.header")}</h1>
+        <h2>{t("brands.header")}</h2>
       </div>
       <div className="diper  flex  flex-wrap  mt-2 justify-center">
         <Swiper
@@ -48,8 +48,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -65,8 +65,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -82,8 +82,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -99,8 +99,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -116,8 +116,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -133,8 +133,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -150,8 +150,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -167,8 +167,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -184,8 +184,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="100"
-                height="100"
+                width="70"
+                height="70"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"

@@ -12,7 +12,7 @@ const Testimonials = () => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className="spacer-2 relative h-[70vh] w-full bg-secondary ">
+      <div className="spacer-2 relative h-[81vh] w-full bg-secondary ">
         <div className="header absolute text-center w-full text-textcolor z-30 top-[30%] max-[900px]:top-[15%] text-5xl font-main font-semibold">
           <h1>{t("testimonials.header")}</h1>
         </div>
@@ -38,32 +38,20 @@ const Testimonials = () => {
             }}
           >
             <SwiperSlide>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-              <p className="mt-5 underline italic">Saba Kobaidze</p>
+              {t("testimonials.test1")}
+              <p className="mt-5 underline italic">M. Burduli - GudaurMsheni</p>
             </SwiperSlide>
             <SwiperSlide>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-              <p className="mt-5 underline italic">Saba Kobaidze</p>
+              {t("testimonials.test2")}
+
+              <p className="mt-5 underline italic">
+                D. Maisuradze - CryptoSpace
+              </p>
             </SwiperSlide>
             <SwiperSlide>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-              <p className="mt-5 underline italic">Saba Kobaidze</p>
-            </SwiperSlide>
-            <SwiperSlide>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-              <p className="mt-5 underline italic">Saba Kobaidze</p>
+              {t("testimonials.test3")}
+
+              <p className="mt-5 underline italic">S. O'Neal</p>
             </SwiperSlide>
           </Swiper>
         </div>

@@ -96,6 +96,15 @@ svg {
   pointer-events: none;
   border: none;
 }
+/*
+.spacer {
+  background-image: url("../images/realone.svg");
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+*/
 
 #visual {
   width: 100vw;
@@ -130,6 +139,17 @@ svg {
 html {
   scroll-behavior: smooth;
 }
+/* 
+.test {
+  width: 500px;
+  position: absolute;
+  left: 200px;
+  height: 300px;
+  background-color: blue;
+  border-radius: 45% 42% 30% 60% / 50% 55% 43% 44%;
+  animation: testnimation 10s infinite alternate;
+}
+*/
 
 .test-swiper .swiper {
   height: 170px;
@@ -155,4 +175,37 @@ html {
 }
 #outlined-basic {
   outline-color: white;
+}
+
+.diper::after {
+  content: "";
+  position: absolute;
+  z-index: 10000;
+  right: 0;
+  width: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 217, 217, 0.9752275910364145) 37%,
+
+    rgba(217, 217, 217, 1) 17%
+  );
+
+  height: 100px;
+}
+
+.diper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 10000;
+
+  background: linear-gradient(
+    90deg,
+    rgba(217, 217, 217, 0.9752275910364145) 37%,
+
+    rgba(217, 217, 217, 1) 17%
+  );
+
+  width: 50px;
+  height: 100px;
 }

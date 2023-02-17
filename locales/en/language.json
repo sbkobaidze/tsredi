@@ -18,7 +18,10 @@
     "header": "Services"
   },
   "testimonials": {
-    "header": "Testimonials"
+    "header": "Testimonials",
+    "test1": "'We have a great business relationship with Tsredi. We had worked with several other marketing companies in the past who didn't  deliver results and I'm happy to say Tsredi is doing that for us. They help bring our vision to life in a way that makes sense.' ",
+    "test2": "'Relationship with Tsredi has changed CryptoSpaces' direction dramatically positive!'",
+    "test3": "'I have been working with this digital marketing agency for several months now and I cannot say enough good things about their team. They are incredibly knowledgeable, responsive, and always go above and beyond to deliver great results.'"
   },
   "contact": {
     "header": "CONTACT US!",
@@ -35,6 +38,6 @@
   },
   "about": {
     "header": "ABOUT US",
-    "text": "lorem ipsum"
+    "text": "Tsredi is multidisciplinary digital agency based in Georgia! We are a team of young, motivated, and talented individuals who are passionate about providing innovative solutions to our clients. At our agency, we value transparency, honesty, and integrity. We believe that building strong relationships with our clients is essential to achieving long-term success, therefore we work hard to earn our clients' trust and provide them with the support they need to achieve their business objectives."
   }
 }
