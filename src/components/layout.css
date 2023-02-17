@@ -209,3 +209,48 @@ html {
   width: 50px;
   height: 100px;
 }
+.cls-1 {
+  fill: none;
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4 {
+  stroke-width: 5px;
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5 {
+  stroke-miterlimit: 10;
+}
+
+.cls-1,
+.cls-2,
+.cls-4,
+.cls-5 {
+  stroke: #fff;
+}
+
+.cls-2,
+.cls-5 {
+  fill: #fff;
+}
+
+.cls-3 {
+  fill: #faefa4;
+  stroke: #faef64;
+}
+
+.cls-4 {
+  fill: #f7ec13;
+}
+#Layer_1 {
+  vertical-align: baseline !important;
+}
+.contact {
+  margin-left: 23px;
+}

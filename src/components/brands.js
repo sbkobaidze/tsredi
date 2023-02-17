@@ -133,8 +133,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="70"
-                height="70"
+                width="90"
+                height="90"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -150,8 +150,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="70"
-                height="70"
+                width="90"
+                height="90"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -167,8 +167,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="70"
-                height="70"
+                width="90"
+                height="90"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
@@ -184,8 +184,8 @@ const Brands = () => {
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-4">
               <svg
-                width="70"
-                height="70"
+                width="90"
+                height="90"
                 viewBox="0 0 256 256"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMinYMin meet"
