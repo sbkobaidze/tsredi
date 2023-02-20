@@ -9,7 +9,7 @@ module.exports = {
       main: "#3C58BF",
       textcolor: "#1E1E1E",
       neongreen: "#00F5A0",
-      button: "#830F88",
+      stext: "#8A2BE2",
       white: "#FFF",
       black: "#000",
       secondary: "#D9D9D9",

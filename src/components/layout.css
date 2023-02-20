@@ -190,7 +190,7 @@ html {
     rgba(217, 217, 217, 1) 17%
   );
 
-  height: 100px;
+  height: 110px;
 }
 
 .diper::before {
@@ -207,7 +207,7 @@ html {
   );
 
   width: 50px;
-  height: 100px;
+  height: 110px;
 }
 .cls-1 {
   fill: none;
@@ -253,4 +253,26 @@ html {
 }
 .contact {
   margin-left: 23px;
+}
+
+.custom-shape-divider-bottom-1676905600 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1676905600 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 90px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1676905600 .shape-fill {
+  fill: #d9d9d9;
 }

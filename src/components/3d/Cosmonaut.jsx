@@ -17,11 +17,11 @@ export default function Cosmonaut(props) {
     group.current.rotation.x = 0
     group.current.rotation.z = 0
     group.current.rotation.y = -1
-    group.current.position.y = -10
+    group.current.position.y = -18
   })
 
   return (
-    <group ref={group} {...props} dispose={null} scale={0.1}>
+    <group ref={group} {...props} dispose={null} scale={0.15}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group

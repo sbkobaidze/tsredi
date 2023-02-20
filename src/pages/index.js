@@ -4,7 +4,6 @@ import Header from "../components/header"
 import "../components/layout.css"
 import { graphql } from "gatsby"
 import Hero from "../components/hero"
-import Services from "../components/services"
 import About from "../components/about"
 import Testimonials from "../components/testimonials"
 import Contact from "../components/contact"
@@ -12,21 +11,26 @@ import Footer from "../components/footer"
 import Brands from "../components/brands"
 import Career from "../components/career"
 import { useRef } from "react"
+import Newservices from "../components/newservices"
+import { GeistProvider, CssBaseline } from "@geist-ui/core"
 
 const IndexPage = () => {
   const ref = useRef()
   return (
-    <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0">
-      <Header />
-      <Hero reffed={ref} />
-      <Brands />
-      <Services />
-      <About />
-      <Testimonials />
-      <Contact ref={ref} />
-      <Career />
-      <Footer />
-    </div>
+    <GeistProvider>
+      <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0">
+        <Header />
+        <Hero reffed={ref} />
+
+        <Brands />
+        <Newservices />
+        <About />
+        <Testimonials />
+        <Contact ref={ref} />
+        <Career />
+        <Footer />
+      </div>
+    </GeistProvider>
   )
 }
 /**

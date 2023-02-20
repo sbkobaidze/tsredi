@@ -24,7 +24,6 @@ const Testimonials = () => {
             autoplay={{ delay: "2000" }}
             spaceBetween={50}
             slidesPerView={1}
-            onSwiper={swiper => console.log(swiper)}
             pagination={{
               clickable: true,
             }}
@@ -51,7 +50,7 @@ const Testimonials = () => {
             <SwiperSlide>
               {t("testimonials.test3")}
 
-              <p className="mt-5 underline italic">S. O'Neal</p>
+              <p className="mt-5 underline italic">S. Adamsburg</p>
             </SwiperSlide>
           </Swiper>
         </div>

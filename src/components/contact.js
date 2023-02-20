@@ -4,6 +4,8 @@ import { useRef } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { useState, forwardRef } from "react"
+import { Canvas } from "@react-three/fiber"
+import Starbackground from "./3d/Starbackground"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
@@ -55,6 +57,9 @@ const Contact = forwardRef((_, ref) => {
       ref={ref}
       id="contact"
     >
+      <Canvas className="absolute ">
+        <Starbackground />
+      </Canvas>
       <div class=" custom-shape-divider-top-1673962769">
         <svg
           data-name="Layer 1"
@@ -69,7 +74,7 @@ const Contact = forwardRef((_, ref) => {
         </svg>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="input absolute h-[auto] max-[640px]:h-[auto]  backdrop-blur  rounded-xl top-[15%] p-2 w-[50vw] max-[640px]:w-[80vw]  border-2 border-white">
+        <div className="input absolute h-[auto] max-[640px]:h-[auto]  backdrop-blur  rounded-xl top-[22%] p-2 w-[50vw] max-[640px]:w-[80vw]  border-2 border-white">
           <h1 className="text-white text-3xl font-main font-semibold text-center my-5  max-[900px]:my-2 ">
             {t("contact.header")}
           </h1>
@@ -108,7 +113,7 @@ const Contact = forwardRef((_, ref) => {
             ></textarea>
             <input
               type="submit"
-              className="text-white bg-button rounded-md h-10 m-3 text-center font-main font-semibold cursor-pointer resize-none	"
+              className="text-white bg-[linear-gradient(135deg,#FFDD00,#Fbb034)] rounded-md h-10 m-3 text-center font-main font-semibold cursor-pointer resize-none	"
               placeholder={t("contact.submit")}
               onClick={() => checkForm()}
             ></input>

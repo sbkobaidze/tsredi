@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { MdArrowUpward } from "react-icons/md"
 import { useTranslation } from "gatsby-plugin-react-i18next"
+import { Canvas } from "@react-three/fiber"
+import Starbackground from "./3d/Starbackground"
 
 const Career = () => {
   const { t } = useTranslation()
@@ -27,10 +29,10 @@ const Career = () => {
   }
   return (
     <div
-      className="flex justify-center w-full h-[auto] py-20  dark:bg-black font-main text-white text-semibold flex-col "
+      className="flex justify-center  w-full h-[auto] py-20  dark:bg-black font-main text-white text-semibold flex-col  "
       id="career"
     >
-      <div className="w-1/2 m-auto">
+      <div className="w-1/2 m-auto z-20">
         <div className="header ">
           <h1 className="text-2xl ">{t("vacancies.header")}</h1>
           <h2>{t("vacancies.text")}</h2>

@@ -5,7 +5,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 const Footer = () => {
   const { t } = useTranslation()
   return (
-    <div className="w-full h-[20vh] max-[1300px]:h-[30vh]  p-10 dark:bg-black ">
+    <div className="w-full h-[20vh] max-[1300px]:h-[35vh]  p-10 dark:bg-black ">
       <div>
         <div className="   font-main flex  text-white justify-between ">
           <div className="logo-contact">
