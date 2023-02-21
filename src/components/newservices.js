@@ -2,22 +2,16 @@ import React from "react"
 import Card from "@geist-ui/core/esm/card/card"
 import { Radio } from "@geist-ui/core"
 import { useState } from "react"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Newservices = () => {
+  const [t] = useTranslation()
   const [text, changeText] = useState({
     1: (
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2">UI/UX</h1>
-          <p>
-            UI/UX service is designed to create user-centered, visually
-            appealing and intuitive digital experiences for your customers. We
-            understand that your website or application is the face of your
-            business and the first point of contact for potential customers.
-            That's why we focus on delivering a seamless and engaging user
-            experience that will help your business to stand out and connect
-            with your target audience.
-          </p>
+          <p>{t("services.UI")}</p>
         </div>
       </>
     ),
@@ -25,14 +19,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2 ">Web Development</h1>
-          <p>
-            Our Team of experienced developers uses the latest technologies and
-            frameworks to create custom web solutions that are tailored to your
-            unique business needs. We start by understanding your business
-            objectives, target audience, and competitors. This helps us to
-            develop a comprehensive web development strategy that aligns with
-            your brand and business goals.
-          </p>
+          <p>{t("services.Web")}</p>
         </div>
       </>
     ),
@@ -40,15 +27,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2 ">Social Media Marketing</h1>
-          <p>
-            Social media marketing service is designed to help you build and
-            maintain a strong social media presence across platforms such as
-            Facebook, Snapchat, and TikTok. We understand that social media is
-            an essential part of a successful digital marketing strategy, and we
-            specialize in developing custom social media marketing campaigns
-            that drive engagement, build brand awareness, and increase
-            conversions.
-          </p>
+          <p>{t("services.Soc")}</p>
         </div>
       </>
     ),
@@ -56,13 +35,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2 ">Search Engine Marketing</h1>
-          <p>
-            We specialize in Google Ads, Google Analytics, and other search
-            engine advertising platforms. Our team is up-to-date with the latest
-            SEM trends, including remarketing, dynamic search ads, and local
-            search advertising, and we integrate these elements into your SEM
-            campaigns as appropriate.
-          </p>
+          <p>{t("services.Sem")}</p>
         </div>
       </>
     ),
@@ -70,14 +43,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2">Email Marketing</h1>
-          <p>
-            Email Marketing service is designed to help you reach and engage
-            with your target audience through highly targeted and personalized
-            email campaigns. We understand that email marketing is a highly
-            effective way to communicate with your existing customers and leads,
-            and we specialize in developing customized email campaigns that
-            drive results and meet your business objectives.
-          </p>
+          <p>{t("services.Email")}</p>
         </div>
       </>
     ),
@@ -85,14 +51,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2">SEO</h1>
-          <p>
-            SEO (Search Engine Optimization) service is designed to help you
-            increase your website's visibility and organic traffic through the
-            use of proven SEO strategies and techniques. We understand that SEO
-            is a critical component of a successful digital marketing strategy,
-            and we specialize in developing customized campaigns that drive
-            results and meet your business objectives.
-          </p>
+          <p>{t("services.SEO")}</p>
         </div>
       </>
     ),
@@ -100,14 +59,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2">Blockchain Development</h1>
-          <p>
-            Blockchain Development service is an essential component of your
-            digital marketing strategy. By leveraging blockchain technology and
-            incorporating tokens and NFTs into your business operations, you can
-            improve efficiency, increase transparency, and create new revenue
-            streams, resulting in a positive impact on your business's bottom
-            line.
-          </p>
+          <p>{t("services.Blockchain")}</p>
         </div>
       </>
     ),
@@ -115,15 +67,7 @@ const Newservices = () => {
       <>
         <div className="h-[100%]">
           <h1 className="text-3xl mb-2">App Development</h1>
-          <p>
-            We specialize in developing mobile apps for both iOS and Android
-            platforms, using the latest app development technologies such as
-            React Native, Flutter, and Swift. Our team is up-to-date with the
-            latest app development trends and best practices, including app
-            store optimization (ASO), push notifications, and in-app purchases,
-            and we integrate these elements into your app development project as
-            appropriate.
-          </p>
+          <p>{t("services.App")}</p>
         </div>
       </>
     ),
@@ -140,7 +84,7 @@ const Newservices = () => {
         <div className="radios w-[50%] h-[100%]  max-[700px]:w-[100%] font-main  ">
           <Radio.Group value={state} onChange={handler}>
             <h1 className="mb-4 ml-4 text-white text-4xl font-bold ">
-              SERVICES
+              {t("services.header")}
             </h1>
             <Card
               hoverable
@@ -154,6 +98,7 @@ const Newservices = () => {
                   width="35"
                   height="35"
                   viewBox="0 0 96 96"
+                  className="mr-2"
                 >
                   <g data-name="UI UX Design">
                     <rect
@@ -356,6 +301,7 @@ const Newservices = () => {
               <Radio value="2">
                 {" "}
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -470,6 +416,7 @@ const Newservices = () => {
               <Radio value="3">
                 {" "}
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -506,6 +453,7 @@ const Newservices = () => {
             >
               <Radio value="4">
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -532,6 +480,7 @@ const Newservices = () => {
             >
               <Radio value="5">
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -665,6 +614,7 @@ const Newservices = () => {
             >
               <Radio value="6">
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -750,6 +700,7 @@ const Newservices = () => {
             >
               <Radio value="7">
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -1019,6 +970,7 @@ const Newservices = () => {
             >
               <Radio value="8">
                 <svg
+                  className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"

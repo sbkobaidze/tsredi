@@ -12,7 +12,7 @@ import Brands from "../components/brands"
 import Career from "../components/career"
 import { useRef } from "react"
 import Newservices from "../components/newservices"
-import { GeistProvider, CssBaseline } from "@geist-ui/core"
+import { GeistProvider } from "@geist-ui/core"
 
 const IndexPage = () => {
   const ref = useRef()

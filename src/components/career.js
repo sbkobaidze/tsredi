@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import { MdArrowUpward } from "react-icons/md"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import { Canvas } from "@react-three/fiber"
-import Starbackground from "./3d/Starbackground"
 
 const Career = () => {
   const { t } = useTranslation()
@@ -55,14 +53,7 @@ const Career = () => {
           </div>
           <div className="mt-5 flex flex-col">
             <div className="text">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
+              <p></p>
             </div>
             <div className="button text-xl mt-5 max-[900px]:mt-2 underline ">
               <a href="#">APPLY </a>

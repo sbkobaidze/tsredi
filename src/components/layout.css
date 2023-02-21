@@ -177,38 +177,6 @@ html {
   outline-color: white;
 }
 
-.diper::after {
-  content: "";
-  position: absolute;
-  z-index: 10000;
-  right: 0;
-  width: 50px;
-  background: linear-gradient(
-    90deg,
-    rgba(217, 217, 217, 0.9752275910364145) 37%,
-
-    rgba(217, 217, 217, 1) 17%
-  );
-
-  height: 110px;
-}
-
-.diper::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  z-index: 10000;
-
-  background: linear-gradient(
-    90deg,
-    rgba(217, 217, 217, 0.9752275910364145) 37%,
-
-    rgba(217, 217, 217, 1) 17%
-  );
-
-  width: 50px;
-  height: 110px;
-}
 .cls-1 {
   fill: none;
 }

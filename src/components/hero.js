@@ -1,7 +1,6 @@
-import React, { lazy, Suspense, useEffect, useState } from "react"
+import React from "react"
 import { Button } from "@mui/material"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
+
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Animation from "./3d/animation.json"
 import Lottie from "lottie-react"
@@ -13,7 +12,7 @@ const Hero = ({ reffed }) => {
 
   return (
     <div>
-      <div className=" w-full h-screen dark:bg-black relative   ">
+      <div className=" w-full h-[87vh] dark:bg-black relative   ">
         <div class="custom-shape-divider-bottom-1676905600">
           <svg
             data-name="Layer 1"
@@ -27,7 +26,7 @@ const Hero = ({ reffed }) => {
             ></path>
           </svg>
         </div>
-        <div className="w-[80%] h-100%  absolute mx-auto right-0 left-0 top-[20%] z-10 ">
+        <div className="w-[80%] h-100% max-[640px]:left-[30%] max-[640px]:top-[15%] absolute mx-auto right-0 left-0 top-[25%] z-10 ">
           <div className="relative">
             <div className="text-white text-5xl font-main font-semibold z-20 absolute">
               <h1 className="mb-3  " id="canvas3d">
@@ -47,7 +46,7 @@ const Hero = ({ reffed }) => {
             </div>
           </div>
         </div>
-        <div className="h-[500px] w-[50%] max-[640px]:w-[100%] max-[640px]:right-0 absolute right-20 ">
+        <div className="h-[500px] w-[50%] max-[640px]:w-[100%] max-[640px]:right-0 max-[510px]:top-[40%]  max-[650px]:top-[20%] max-[780px]:top-[20%] absolute  right-20 ">
           <Lottie animationData={Animation}></Lottie>
         </div>
       </div>

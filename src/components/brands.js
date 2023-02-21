@@ -21,7 +21,6 @@ const Brands = () => {
           grabCursor={true}
           spaceBetween={5}
           slidesPerView={4}
-          onSwiper={swiper => console.log(swiper)}
           centeredSlides={true}
           breakpoints={{
             // when window width is >= 640px
@@ -43,7 +42,10 @@ const Brands = () => {
             "--swiper-pagination-bottom": "0px",
           }}
           speed={4000}
-          autoplay={{ delay: "200", disableOnInteraction: true }}
+          autoplay={{
+            delay: "0",
+            disableOnInteraction: false,
+          }}
         >
           <SwiperSlide>
             <div className="w-[100px] h-auto  m-3 flex justify-center">

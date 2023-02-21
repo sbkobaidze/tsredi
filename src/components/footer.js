@@ -98,8 +98,20 @@ const Footer = () => {
                 contact@tsredi.com
               </div>
               <div className="flex items-center  ml-[23px] w-full mt-2">
-                <FaFacebook className="mr-1" size={20} />
-                <FaLinkedin className="mr-1" size={20} />
+                <a
+                  href="https://www.facebook.com/profile.php?id=100090480311654"
+                  target="_blank"
+                >
+                  {" "}
+                  <FaFacebook className="mr-1" size={20} />{" "}
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/90939483"
+                  target="_blank"
+                >
+                  {" "}
+                  <FaLinkedin className="mr-1" size={20} />
+                </a>
                 <FaInstagram className="mr-1" size={20} />
               </div>
             </div>
