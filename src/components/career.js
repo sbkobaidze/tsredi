@@ -56,7 +56,12 @@ const Career = () => {
               <p></p>
             </div>
             <div className="button text-xl mt-5 max-[900px]:mt-2 underline ">
-              <a href="#">APPLY </a>
+              <a
+                href="https://cvkuhu439xi.typeform.com/to/LmRR4HWo"
+                target="_blank"
+              >
+                APPLY{" "}
+              </a>
             </div>
           </div>
         </div>
