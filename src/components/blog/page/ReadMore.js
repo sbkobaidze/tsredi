@@ -1,18 +1,14 @@
 import React from "react"
 import BlogCard from "../main/BlogCard"
 
-const ReadMore = ({ blogCount }) => {
+const ReadMore = ({ blogCount, title }) => {
   const blogCopy = blogCount.slice(0, blogCount.length)
 
   //avoid redirection to same blog page
   for (let x = 0; x < blogCopy.length; x++) {
-    let currentFile = window.location.href.split("/")
-
-    if (
-      blogCopy[x].frontmatter.fileName === currentFile[currentFile.length - 2]
-    ) {
+    console.log(title)
+    if (blogCopy[x].frontmatter.fileName === title) {
       blogCopy.splice(x, 1)
-      console.log(blogCopy)
     }
   }
   return (

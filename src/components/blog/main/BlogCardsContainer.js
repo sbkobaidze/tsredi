@@ -27,7 +27,7 @@ const BlogCardsContainer = data => {
           {blogArray.map((blogContent, index) => {
             return (
               <div className="card-1 m-4 " key={blogContent.frontmatter.id}>
-                <Card width="600px" hoverable>
+                <Card width="100%" hoverable>
                   <Image
                     src={blogContent.frontmatter.heroImage}
                     height="200px"
@@ -43,7 +43,7 @@ const BlogCardsContainer = data => {
                   <Text>{blogContent.frontmatter.date}</Text>
                   <CardFooter>
                     <Link
-                      to={blogContent.frontmatter.fileName}
+                      to={"/" + blogContent.frontmatter.fileName}
                       className="text-main"
                     >
                       Read more...

@@ -22,7 +22,7 @@ const BlogPostPage = ({ data }) => {
       <Navbar />
       <BlogContent title={title} image={heroImage} />
       <BlogText text={html} image={blogImage} />
-      <ReadMore blogCount={blogCount} />
+      <ReadMore blogCount={blogCount} title={fileName} />
       <Footer />
     </div>
   )

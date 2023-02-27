@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify"
 
 const Bloghero = ({ title }) => {
   return (
-    <div className="w-full h-[80vh] max-[1000px]:h-[50vh] font-main font-semibold reative dark:bg-black relative">
+    <div className="w-full h-[80vh] max-[1000px]:h-[80vh] font-main font-semibold reative dark:bg-black relative">
       <ToastContainer />
       <div className="w-[80%] h-full  m-auto  overflow-hidden  ">
         <div className="text  absolute top-[15%] left-[10%] z-40 max-[640px]:top-[15%]">

@@ -1,7 +1,7 @@
 import React from "react"
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import { Link } from "gatsby-plugin-react-i18next"
 const Footer = () => {
   const { t } = useTranslation()
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="   font-main flex  text-white justify-between ">
           <div className="logo-contact">
             <div className="name mr-10 text-2xl font-bold ">
-              <a href="#main">
+              <Link to="/">
                 <svg
                   id="Layer_1"
                   data-name="Layer 1"
@@ -91,7 +91,7 @@ const Footer = () => {
                     />
                   </g>
                 </svg>
-              </a>
+              </Link>
             </div>
             <div className="flex flex-col pt-1">
               <div className="ml-[23px] font-main font-semibold">
