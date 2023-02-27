@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Card from "@geist-ui/core/esm/card/card"
 import { Radio } from "@geist-ui/core"
 import { useState } from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import Elastic from "../images/elastic.png"
 const Newservices = () => {
   const [t] = useTranslation()
   const [text, changeText] = useState({
@@ -75,11 +75,29 @@ const Newservices = () => {
   const [state, setState] = useState("1")
   const handler = val => {
     setState(val)
-    console.log(val)
   }
 
+  //trying animation
+  // useEffect(() => {
+  //   const hiddenElements = document.querySelectorAll(".hid")
+  //   const observer = new IntersectionObserver(entries => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("show")
+  //       } else {
+  //         entry.target.classList.remove("show")
+  //       }
+  //     })
+  //   })
+
+  //   hiddenElements.forEach(el => observer.observe(el))
+  // })
+
   return (
-    <div className="w-full h-[auto]  max-[700px]:h-[auto] flex items-center font-main text-semibold text-textcolor bg-secondary ">
+    <div
+      className=" w-full h-[auto]  max-[700px]:h-[auto] flex items-center font-main text-semibold text-textcolor bg-secondary "
+      id="services"
+    >
       <div className="card w-[80%] h-[auto] my-20 max-[700px]:h-[95%] mx-auto bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl p-10 flex flex-row max-[700px]:flex-col-reverse">
         <div className="radios w-[50%] h-[100%]  max-[700px]:w-[100%] font-main  ">
           <Radio.Group value={state} onChange={handler}>
@@ -88,6 +106,7 @@ const Newservices = () => {
             </h1>
             <Card
               hoverable
+              className="hid"
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
               <Radio value="1">
@@ -296,6 +315,7 @@ const Newservices = () => {
             </Card>
             <Card
               hoverable
+              className="hid"
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
               <Radio value="2">
@@ -410,6 +430,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -432,8 +453,8 @@ const Newservices = () => {
                     y2="40.615"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop offset="0" stop-color="#2aa4f4"></stop>
-                    <stop offset="1" stop-color="#007ad9"></stop>
+                    <stop offset="0" stopColor="#2aa4f4"></stop>
+                    <stop offset="1" stopColor="#007ad9"></stop>
                   </linearGradient>
                   <path
                     fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)"
@@ -448,6 +469,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -475,6 +497,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -609,6 +632,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -695,6 +719,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -711,7 +736,7 @@ const Newservices = () => {
                   <path
                     fill="#e1ebf2"
                     stroke="#66798f"
-                    stroke-miterlimit="10"
+                    strokemiterlimit="10"
                     d="M4.5,2.5h31c1.105,0,2,0.895,2,2v31c0,1.105-0.895,2-2,2h-31 c-1.105,0-2-0.895-2-2v-31C2.5,3.395,3.395,2.5,4.5,2.5z"
                   ></path>
                   <path
@@ -965,6 +990,7 @@ const Newservices = () => {
               </Radio>
             </Card>
             <Card
+              className="hid"
               hoverable
               style={{ margin: "0 10px 10px 10px", backgroundColor: "#F8F9F5" }}
             >
@@ -1128,11 +1154,15 @@ const Newservices = () => {
         </div>
         <div className="text w-[50%] max-[700px]:w-[100%] h-[100%]  mb-4 text-textcolor font-normal my-14 max-[700px]:my-0 max-[700px]:mb-2   ">
           <Card
+            className="hid"
             hoverable
             style={{ height: "100%", backgroundColor: "#F8F9F5" }}
           >
             {text[state]}
           </Card>
+          <div className="svg">
+            <img src={Elastic}></img>
+          </div>
         </div>
       </div>
     </div>

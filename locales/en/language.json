@@ -47,5 +47,8 @@
   "about": {
     "header": "ABOUT US",
     "text": "Tsredi is multidisciplinary digital agency based in Georgia! We are a team of young, motivated, and talented individuals who are passionate about providing innovative solutions to our clients. At our agency, we value transparency, honesty, and integrity. We believe that building strong relationships with our clients is essential to achieving long-term success, therefore we work hard to earn our clients' trust and provide them with the support they need to achieve their business objectives."
+  },
+  "blog": {
+    "header": "BLOG"
   }
 }

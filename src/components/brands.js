@@ -43,7 +43,6 @@ const Brands = () => {
           }}
           speed={4000}
           autoplay={{
-            delay: "0",
             disableOnInteraction: false,
           }}
         >

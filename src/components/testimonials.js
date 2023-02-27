@@ -2,7 +2,7 @@ import React from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import { MdFormatQuote } from "react-icons/md"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -12,9 +12,11 @@ const Testimonials = () => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className="spacer-2 relative h-[81vh] w-full bg-secondary ">
-        <div className="header absolute text-center w-full text-textcolor z-30 top-[30%] max-[900px]:top-[15%] text-5xl font-main font-semibold">
-          <h1>{t("testimonials.header")}</h1>
+      <div className="spacer-2 relative h-[50vh] w-full bg-secondary ">
+        <div className="header w-full flex absolute justify-center  text-textcolor z-30 top-[20%] max-[900px]:top-[15%] text-5xl font-main font-semibold">
+          <h1>
+            <MdFormatQuote size={80} />
+          </h1>
         </div>
 
         <div className="test-swiper absolute w-[100%]  bottom-0 h-[75%]  flex items-center px-32 max-[900px]:px-0 font-main text-center">

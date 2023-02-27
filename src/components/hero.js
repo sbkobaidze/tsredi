@@ -2,7 +2,7 @@ import React from "react"
 import { Button } from "@mui/material"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import Animation from "./3d/animation.json"
+import Animation from "./Animations/aboutAnimation.json"
 import Lottie from "lottie-react"
 const Hero = ({ reffed }) => {
   const { t } = useTranslation()
@@ -12,7 +12,7 @@ const Hero = ({ reffed }) => {
 
   return (
     <div>
-      <div className=" w-full h-[87vh] dark:bg-black relative   ">
+      <div className=" w-full h-[100vh] dark:bg-black relative   ">
         <div class="custom-shape-divider-bottom-1676905600">
           <svg
             data-name="Layer 1"
@@ -26,28 +26,30 @@ const Hero = ({ reffed }) => {
             ></path>
           </svg>
         </div>
-        <div className="w-[80%] h-100% max-[640px]:left-[30%] max-[640px]:top-[15%] absolute mx-auto right-0 left-0 top-[25%] z-10 ">
-          <div className="relative">
-            <div className="text-white text-5xl font-main font-semibold z-20 absolute">
-              <h1 className="mb-3  " id="canvas3d">
-                {t("hero.text1")}
-              </h1>
-              <h1 className="dark:text-[#8A2BE2] text-neongreen  mb-3">
-                {" "}
-                {t("hero.text2")}
-              </h1>
-              <Button
-                sx={{ color: "white", fontWeight: "bold" }}
-                className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]   font-main  w-32 h-10 border-3"
-                onClick={scrollToContact}
-              >
-                {t("hero.button")}
-              </Button>
-            </div>
+
+        <div className=" h-100%  w-[80%] max-[640px]:left-[30%] max-[640px]:top-[15%] absolute mx-auto right-0 left-0 top-[25%] z-10 ">
+          <div className="text-white text-7xl  max-[900px]:w-[230px] max-[640px]:text-6xl font-main font-semibold z-20 absolute">
+            <h1 className="mb-3  " id="canvas3d">
+              {t("hero.text1")}
+            </h1>
+            <h1 className="dark:text-[#8A2BE2] text-neongreen  mb-1">
+              {" "}
+              {t("hero.text2")}
+            </h1>
+            <Button
+              sx={{ color: "white", fontWeight: "bold" }}
+              className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]   font-main  w-60 h-16 border-3"
+              onClick={scrollToContact}
+            >
+              {t("hero.button")}
+            </Button>
           </div>
         </div>
-        <div className="h-[500px] w-[50%] max-[640px]:w-[100%] max-[640px]:right-0 max-[510px]:top-[40%]  max-[650px]:top-[20%] max-[780px]:top-[20%] absolute  right-20 ">
-          <Lottie animationData={Animation}></Lottie>
+        <div className="h-[500px] w-[50%] max-[640px]:w-[100%] max-[640px]:right-0 max-[640px]:top-[40%]    absolute  right-20 ">
+          <Lottie
+            animationData={Animation}
+            style={{ height: "700px" }}
+          ></Lottie>
         </div>
       </div>
     </div>

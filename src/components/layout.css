@@ -41,7 +41,7 @@ svg {
 
 .mobile-nav {
   transition: all 0.5s ease;
-  top: -1500px;
+  top: -1600px;
 }
 
 .show-mobile-nav {
@@ -160,7 +160,7 @@ html {
     padding-top: 50px;
 
     height: 320px;
-    width: 400px;
+    width: 350px;
   }
 }
 
@@ -243,4 +243,144 @@ html {
 
 .custom-shape-divider-bottom-1676905600 .shape-fill {
   fill: #d9d9d9;
+}
+
+.custom-shape-divider-bottom-1677145451 {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1677145451 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1677145451 .shape-fill {
+  fill: #d9d9d9;
+}
+
+.custom-shape-divider-top-1677155320 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1677155320 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 73px;
+}
+
+.custom-shape-divider-top-1677155320 .shape-fill {
+  fill: #d9d9d9;
+}
+
+.custom-shape-divider-top-1677243917 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1677243917 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 113px;
+}
+
+.custom-shape-divider-top-1677243917 .shape-fill {
+  fill: #d9d9d9;
+}
+
+.custom-shape-divider-bottom-1677244345 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1677244345 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 113px;
+}
+
+.custom-shape-divider-bottom-1677244345 .shape-fill {
+  fill: #d9d9d9;
+}
+
+.custom-shape-divider-top-1677246746 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1677246746 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 113px;
+}
+
+.custom-shape-divider-top-1677246746 .shape-fill {
+  fill: #d9d9d9;
+}
+
+.custom-shape-divider-top-1677344202 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1677344202 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1677344202 .shape-fill {
+  fill: #d3d3d3;
+}
+#career .title.jsx-3385074358 h3.jsx-3385074358 {
+  color: white;
+}
+#career svg.jsx-3093828604 {
+  fill: white;
+}
+
+.hid {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }

@@ -12,6 +12,7 @@ import Brands from "../components/brands"
 import Career from "../components/career"
 import { useRef } from "react"
 import Newservices from "../components/newservices"
+import Projects from "../components/Projects"
 import { GeistProvider } from "@geist-ui/core"
 
 const IndexPage = () => {

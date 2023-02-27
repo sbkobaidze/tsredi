@@ -43,6 +43,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PLKNDKL",
@@ -60,6 +64,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blogs`,
         name: `locale`,
       },
     },
