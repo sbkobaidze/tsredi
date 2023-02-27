@@ -84,7 +84,7 @@ const Header = () => {
       <div className=" border-white text-white font-medium dark:bg-black   h-16 w-full flex justify-center font-main relative z-30">
         <div className="border-t-2 w-full m-2  px-5 pt-2 flex justify-between">
           <div className="header text-2xl w-auto h-auto" id="main">
-            <Link href="/">
+            <Link to="/">
               <svg
                 id="Layer_1"
                 data-name="Layer 1"
