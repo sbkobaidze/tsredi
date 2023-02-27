@@ -43,7 +43,7 @@ const BlogCardsContainer = data => {
                   <Text>{blogContent.frontmatter.date}</Text>
                   <CardFooter>
                     <Link
-                      to={"/" + blogContent.frontmatter.fileName}
+                      to={"/blog/" + blogContent.frontmatter.fileName}
                       className="text-main"
                     >
                       Read more...
