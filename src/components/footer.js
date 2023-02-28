@@ -117,21 +117,25 @@ const Footer = () => {
             </div>
           </div>
           <div className="links text-md pt-1">
-            <ul>
-              <a href="#about">
+            <ul className="font-semibold">
+              <Link to="/#about">
                 <li className="mx-2 ">{t("header.about")}</li>
-              </a>
-              <a href="#services">
+              </Link>
+              <Link to="/#services">
                 <li className="mx-2">{t("header.services")}</li>
-              </a>
-              <a href="#contact">
+              </Link>
+              <Link to="/#contact">
                 {" "}
                 <li className="mx-2">{t("header.contact")}</li>
-              </a>
-              <a href="#career">
+              </Link>
+              <Link to="/#career">
                 {" "}
                 <li className="mx-2">{t("header.careers")}</li>
-              </a>
+              </Link>
+              <Link to="/#blog">
+                {" "}
+                <li className="mx-2">{t("blog.header")}</li>
+              </Link>
             </ul>
           </div>
         </div>

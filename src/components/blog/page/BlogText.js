@@ -1,15 +1,32 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import NewsletterCard from "../main/NewsletterCard"
 import { ToastContainer } from "react-toastify"
 import { Button } from "@geist-ui/core"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-const BlogText = ({ text, image }) => {
+const BlogText = ({ text, image, allBlogs, fileName }) => {
+  const [nextPage, changeNextPage] = useState("/blog/")
+
+  const localCopyOfBlogs = allBlogs.slice(0, allBlogs.length)
+
+  useEffect(() => {
+    //next blog page
+    for (let blog of localCopyOfBlogs) {
+      if (blog.frontmatter.fileName === fileName) {
+        let blogIndex = localCopyOfBlogs.indexOf(blog)
+        if (localCopyOfBlogs[blogIndex + 1] === undefined) {
+        } else {
+          changeNextPage(
+            nextPage + localCopyOfBlogs[blogIndex + 1].frontmatter.fileName
+          )
+        }
+      }
+    }
+  }, [])
+
   const regex = /(?<=<p>)(.*?)(?=<\/p>)/g
   const array = [...text.matchAll(regex)]
   const blogHeader = text.match(/(?<=<h2>)(.*?)(?=<\/h2>)/)
-  console.log(image)
 
   return (
     <div className="w-full  relative bg-secondary ">
@@ -39,7 +56,7 @@ const BlogText = ({ text, image }) => {
           </div>
         </div>
         <div className="next-article flex justify-center">
-          <Link to="blog2">
+          <Link to={nextPage}>
             <Button
               style={{
                 margin: "10px 0",

@@ -8,7 +8,13 @@ const BlogCard = ({ title, image, description, date, fileName }) => {
   return (
     <div className="card-1 m-4 ">
       <Card width="100%" hoverable>
-        <Image src={image} height="200px" width="300px" draggable={false} />
+        <Image
+          src={image}
+          height="200px"
+          width="300px"
+          draggable={false}
+          alt={fileName + " - Tsredi"}
+        />
         <Text h4 mb={0}>
           {title}
         </Text>

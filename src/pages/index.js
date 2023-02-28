@@ -14,22 +14,24 @@ import { useRef } from "react"
 import Newservices from "../components/newservices"
 import Projects from "../components/Projects"
 import { GeistProvider } from "@geist-ui/core"
+import Copyright from "../components/Copyright"
+import Layout from "../components/layout"
 
 const IndexPage = () => {
   const ref = useRef()
   return (
     <GeistProvider>
       <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0">
-        <Header />
-        <Hero reffed={ref} />
+        <Layout>
+          <Hero reffed={ref} />
 
-        <Brands />
-        <Newservices />
-        <About />
-        <Testimonials />
-        <Contact ref={ref} />
-        <Career />
-        <Footer />
+          <Brands />
+          <Newservices />
+          <About />
+          <Testimonials />
+          <Contact ref={ref} />
+          <Career />
+        </Layout>
       </div>
     </GeistProvider>
   )

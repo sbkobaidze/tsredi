@@ -33,6 +33,7 @@ const BlogCardsContainer = data => {
                     height="200px"
                     width="300px"
                     draggable={false}
+                    alt={blogContent.frontmatter.fileName}
                   />
                   <Text h4 mb={0}>
                     Geist UI React

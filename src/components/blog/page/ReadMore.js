@@ -4,9 +4,8 @@ import BlogCard from "../main/BlogCard"
 const ReadMore = ({ blogCount, title }) => {
   const blogCopy = blogCount.slice(0, blogCount.length)
 
-  //avoid redirection to same blog page
+  //avoid showing to same blog page
   for (let x = 0; x < blogCopy.length; x++) {
-    console.log(title)
     if (blogCopy[x].frontmatter.fileName === title) {
       blogCopy.splice(x, 1)
     }

@@ -3,7 +3,8 @@ import Card from "@geist-ui/core/esm/card/card"
 import { Radio } from "@geist-ui/core"
 import { useState } from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import Elastic from "../images/elastic.png"
+import { StaticImage } from "gatsby-plugin-image"
+
 const Newservices = () => {
   const [t] = useTranslation()
   const [text, changeText] = useState({
@@ -1161,7 +1162,10 @@ const Newservices = () => {
             {text[state]}
           </Card>
           <div className="svg">
-            <img src={Elastic}></img>
+            <StaticImage
+              src={"../images/elastic.png"}
+              alt="Tsredi Services"
+            ></StaticImage>
           </div>
         </div>
       </div>

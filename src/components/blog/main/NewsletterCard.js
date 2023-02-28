@@ -37,7 +37,7 @@ const NewsletterCard = () => {
   }
   return (
     <div>
-      <Card>
+      <Card width={"90%"}>
         <div className="flex">
           <h2 className="text-xl mt-2 mr-1">SUBSCRIBE TO OUR NEWSLETTER</h2>
           <Lottie

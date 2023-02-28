@@ -1,23 +1,21 @@
 import * as React from "react"
 import Seo from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
 import { graphql } from "gatsby"
 import Bloghero from "../components/blog/main/bloghero"
 import Blogcards from "../components/blog/main/BlogCardsContainer"
 import "../components/layout.css"
 import Newsletter from "../components/blog/main/newsletter"
+import Layout from "../components/layout"
 
 const Blog = ({ data }) => {
   const arrayData = data.allMarkdownRemark
   return (
     <div className="dark:bg-black bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Header />
-      <Bloghero />
-      <Blogcards data={arrayData} />
-      <Newsletter />
-
-      <Footer />
+      <Layout>
+        <Bloghero />
+        <Blogcards data={arrayData} />
+        <Newsletter />
+      </Layout>
     </div>
   )
 }

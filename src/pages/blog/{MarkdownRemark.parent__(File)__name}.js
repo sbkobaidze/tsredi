@@ -1,10 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Footer from "../../components/footer"
-import Navbar from "../../components/header"
 import BlogContent from "../../components/blog/page/BlogContent"
 import BlogText from "../../components/blog/page/BlogText"
 import ReadMore from "../../components/blog/page/ReadMore"
+import Layout from "../../components/layout"
 
 const BlogPostPage = ({ data }) => {
   const title = data.markdownRemark.frontmatter.title
@@ -19,11 +18,16 @@ const BlogPostPage = ({ data }) => {
 
   return (
     <div className="wrapper bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Navbar />
-      <BlogContent title={title} image={heroImage} />
-      <BlogText text={html} image={blogImage} />
-      <ReadMore blogCount={blogCount} title={fileName} />
-      <Footer />
+      <Layout>
+        <BlogContent title={title} image={heroImage} />
+        <BlogText
+          text={html}
+          image={blogImage}
+          allBlogs={blogCount}
+          fileName={fileName}
+        />
+        <ReadMore blogCount={blogCount} title={fileName} />
+      </Layout>
     </div>
   )
 }
