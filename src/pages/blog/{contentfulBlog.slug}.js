@@ -1,10 +1,10 @@
 import * as React from "react"
 import "../../components/layout.css"
 import { graphql } from "gatsby"
-import Articles from "../../components/blog/blogpage/articles"
 import Layout from "../../components/layout"
 import BlogContent from "../../components/blog/blogpage/articles"
 import PopularBlogArticles from "../../components/blog/blogpage/popularblogarticles"
+import BlogStory from "../../components/blog/blogpage/blogstory"
 
 const Page = ({ data }) => {
   const blogCount = data.allContentfulBlog.nodes
@@ -26,7 +26,7 @@ const Page = ({ data }) => {
     <div className="wrapper bg-[linear-gradient(135deg,#330867,#31a7bb)] ">
       <Layout>
         <BlogContent title={blogTitle} image={blogHeroImage} />
-        <Articles
+        <BlogStory
           paragraph={blogParagraph}
           writeDate={blogWrieDate}
           author={blogAuthor}
