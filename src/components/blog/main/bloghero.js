@@ -361,4 +361,4 @@ const BlogHero = ({ title }) => {
   )
 }
 
-export default Bloghero
+export default BlogHero
