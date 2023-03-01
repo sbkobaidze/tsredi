@@ -5,7 +5,7 @@ import { Link } from "gatsby-plugin-react-i18next"
 const Footer = () => {
   const { t } = useTranslation()
   return (
-    <div className="w-full h-[20vh] max-[1300px]:h-[30vh]  p-10 dark:bg-black ">
+    <div className="w-full   p-10 dark:bg-black ">
       <div>
         <div className="   font-main flex  text-white justify-between ">
           <div className="logo-contact">
@@ -116,7 +116,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="links text-md pt-1">
+          <div className="links text-md pt-1 ">
             <ul className="font-semibold">
               <Link to="/#about">
                 <li className="mx-2 ">{t("header.about")}</li>
@@ -132,7 +132,7 @@ const Footer = () => {
                 {" "}
                 <li className="mx-2">{t("header.careers")}</li>
               </Link>
-              <Link to="/#blog">
+              <Link to="/blog">
                 {" "}
                 <li className="mx-2">{t("blog.header")}</li>
               </Link>

@@ -5,12 +5,12 @@ import Copyright from "./copyright"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Navbar />
       {children}
       <Footer />
       <Copyright />
-    </div>
+    </>
   )
 }
 

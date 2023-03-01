@@ -385,12 +385,10 @@ html {
   transform: translateX(0);
 }
 
-@media only screen and (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .post-1 h1 {
@@ -400,4 +398,8 @@ html {
 .post-1 p {
   margin: 25px 0;
   line-height: 1.5;
+}
+
+* {
+  border: 1px solid red;
 }

@@ -17,8 +17,8 @@ import Layout from "../components/layout"
 const IndexPage = () => {
   const ref = useRef()
   return (
-    <GeistProvider>
-      <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0">
+    <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0 h-[100%] overflow-y-hidden">
+      <GeistProvider>
         <Layout>
           <Hero reffed={ref} />
 
@@ -29,8 +29,8 @@ const IndexPage = () => {
           <Contact ref={ref} />
           <Career />
         </Layout>
-      </div>
-    </GeistProvider>
+      </GeistProvider>
+    </div>
   )
 }
 /**

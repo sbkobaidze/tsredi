@@ -1,11 +1,10 @@
 import * as React from "react"
+import "../../components/layout.css"
 import { graphql } from "gatsby"
 import BlogText from "../../components/blog/page/blogtext"
 import Layout from "../../components/layout"
 import BlogContent from "../../components/blog/page/blogcontent"
 import ReadMore from "../../components/blog/page/readmore"
-import "../components/layout.css"
-
 const Page = ({ data }) => {
   const blogCount = data.allContentfulBlog.nodes
 
