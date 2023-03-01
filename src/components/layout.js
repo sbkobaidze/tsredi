@@ -1,7 +1,7 @@
 import React from "react"
 import Navbar from "./header"
 import Footer from "./footer"
-import Copyright from "./Copyright"
+import Copyright from "./copyright"
 
 const Layout = ({ children }) => {
   return (

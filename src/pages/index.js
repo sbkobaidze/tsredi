@@ -1,6 +1,5 @@
 import * as React from "react"
 
-import Header from "../components/header"
 import "../components/layout.css"
 import { graphql } from "gatsby"
 import Hero from "../components/hero"
@@ -12,9 +11,7 @@ import Brands from "../components/brands"
 import Career from "../components/career"
 import { useRef } from "react"
 import Newservices from "../components/newservices"
-import Projects from "../components/Projects"
 import { GeistProvider } from "@geist-ui/core"
-import Copyright from "../components/Copyright"
 import Layout from "../components/layout"
 
 const IndexPage = () => {
