@@ -2,7 +2,7 @@ import React from "react"
 import NewsletterCard from "./NewsletterCard"
 import { ToastContainer } from "react-toastify"
 
-const Bloghero = ({ title }) => {
+const BlogHero = ({ title }) => {
   return (
     <div className="w-full h-[80vh] max-[1000px]:h-[80vh] font-main font-semibold reative dark:bg-black relative">
       <ToastContainer />

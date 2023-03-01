@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import BlogCard from "../blogcard"
 
-const ReadMore = ({ blogCount, blogId }) => {
+const PopularBlogArticles = ({ blogCount, blogId }) => {
   //avoid showing to same blog page
   const copyArray = [...blogCount]
 
@@ -60,4 +60,4 @@ const ReadMore = ({ blogCount, blogId }) => {
   )
 }
 
-export default ReadMore
+export default PopularBlogArticles

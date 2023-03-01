@@ -3,7 +3,7 @@ import { Button } from "@geist-ui/core"
 
 import BlogCard from "../blogcard"
 
-const BlogCardsContainer = ({ blogData }) => {
+const ArticleContainer = ({ blogData }) => {
   const [btnDisabled, changeDisabled] = useState(true)
 
   const [blogShow, showMoreBlogs] = useState(3)
@@ -63,4 +63,4 @@ const BlogCardsContainer = ({ blogData }) => {
   )
 }
 
-export default BlogCardsContainer
+export default ArticleContainer

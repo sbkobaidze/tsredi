@@ -1,19 +1,20 @@
 import * as React from "react"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
-import Bloghero from "../components/blog/main/bloghero"
+import BlogHero from "../components/blog/main/bloghero"
 import Layout from "../components/layout"
-import BlogCardsContainer from "../components/blog/main/blogcardscontainer"
+import ArticleContainer from "../components/blog/main/articlecontainer"
 import "../components/layout.css"
 import BlogBottom from "../components/blog/main/blogmainbottom"
 
 const Blog = ({ data }) => {
+  ""
   const blogData = data.allContentfulBlog.nodes
   return (
     <div className="dark:bg-black bg-[linear-gradient(135deg,#330867,#31a7bb)]">
       <Layout>
-        <Bloghero />
-        <BlogCardsContainer blogData={blogData} />
+        <BlogHero />
+        <ArticleContainer blogData={blogData} />
         <BlogBottom />
       </Layout>
     </div>

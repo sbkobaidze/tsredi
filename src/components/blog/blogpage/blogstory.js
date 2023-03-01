@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
-import NewsletterCard from "../main/newslettercard"
 import { ToastContainer } from "react-toastify"
 import { Button } from "@geist-ui/core"
 import { Link } from "gatsby"
 import User from "@geist-ui/core/esm/user/user"
+import NewsLetterCard from "../main/newslettercard"
 
 const BlogStory = ({
   blogCount,
@@ -34,7 +34,7 @@ const BlogStory = ({
       <ToastContainer />
       <div className="flex justify-center ">
         <div className="sticky w-[40%] max-[640px]:w-[80%] ">
-          <NewsletterCard />
+          <NewsLetterCard />
         </div>
       </div>
       <div className="w-[90%] m-auto font-main mt-20 leading-10 ">
