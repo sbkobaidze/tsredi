@@ -1,6 +1,6 @@
 import React from "react"
 
-const Newsletter = () => {
+const BlogBottom = () => {
   return (
     <div className="dark:bg-black relative w-full h-[10vh]">
       <div class="custom-shape-divider-top-1677155320">
@@ -21,4 +21,4 @@ const Newsletter = () => {
   )
 }
 
-export default Newsletter
+export default BlogBottom

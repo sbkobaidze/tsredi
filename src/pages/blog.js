@@ -2,10 +2,10 @@ import * as React from "react"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 import Bloghero from "../components/blog/main/bloghero"
-import Newsletter from "../components/blog/main/newsletter"
 import Layout from "../components/layout"
 import BlogCardsContainer from "../components/blog/main/blogcardscontainer"
 import "../components/layout.css"
+import BlogBottom from "../components/blog/main/blogmainbottom"
 
 const Blog = ({ data }) => {
   const blogData = data.allContentfulBlog.nodes
@@ -14,7 +14,7 @@ const Blog = ({ data }) => {
       <Layout>
         <Bloghero />
         <BlogCardsContainer blogData={blogData} />
-        <Newsletter />
+        <BlogBottom />
       </Layout>
     </div>
   )
