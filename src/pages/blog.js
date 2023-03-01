@@ -2,18 +2,18 @@ import * as React from "react"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 import Bloghero from "../components/blog/main/bloghero"
-import Blogcards from "../components/blog/main/BlogCardsContainer"
+import BlogCardsContainer from "../components/blog/main/blogcardscontainer"
 import "../components/layout.css"
 import Newsletter from "../components/blog/main/newsletter"
 import Layout from "../components/layout"
 
 const Blog = ({ data }) => {
-  const arrayData = data.allMarkdownRemark
+  const blogData = data.allContentfulBlog.nodes
   return (
     <div className="dark:bg-black bg-[linear-gradient(135deg,#330867,#31a7bb)]">
       <Layout>
         <Bloghero />
-        <Blogcards data={arrayData} />
+        <BlogCardsContainer blogData={blogData} />
         <Newsletter />
       </Layout>
     </div>
@@ -39,17 +39,39 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+
+    allContentfulBlog {
       nodes {
-        frontmatter {
-          date
-          description
-          heroImage
-          title
-          fileName
-        }
         id
+        slug
+        title
+        writeDate
+        blogHeroImage {
+          publicUrl
+        }
+
+        blogParagraphImage {
+          publicUrl
+        }
+        blogParagraph {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   }
 `
+
+// allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+//   nodes {
+//     frontmatter {
+//       date
+//       description
+//       heroImage
+//       title
+//       fileName
+//     }
+//     id
+//   }
+// }

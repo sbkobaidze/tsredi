@@ -1,15 +1,16 @@
-import React from "react"
-import BlogCard from "../main/BlogCard"
+import React, { useEffect } from "react"
+import BlogCard from "./blogcard"
 
-const ReadMore = ({ blogCount, title }) => {
-  const blogCopy = blogCount.slice(0, blogCount.length)
-
+const ReadMore = ({ blogCount, blogId }) => {
   //avoid showing to same blog page
-  for (let x = 0; x < blogCopy.length; x++) {
-    if (blogCopy[x].frontmatter.fileName === title) {
-      blogCopy.splice(x, 1)
+  const copyArray = [...blogCount]
+
+  for (let blog of copyArray) {
+    if (blog.id === blogId) {
+      copyArray.splice(copyArray.indexOf(blog), 1)
     }
   }
+
   return (
     <div className="w-full h-[auto] font-main relative dark:bg-black ">
       <div class="custom-shape-divider-top-1677246746">
@@ -42,15 +43,15 @@ const ReadMore = ({ blogCount, title }) => {
           </h1>
         </div>
         <div className="cards flex max-[900px]:flex-col ">
-          {blogCopy.map(blog => {
+          {copyArray.map(blog => {
+            console.log(copyArray)
             return (
               <BlogCard
                 key={blog.id}
-                title={blog.frontmatter.title}
-                description={blog.frontmatter.description}
-                date={blog.frontmatter.date}
-                fileName={blog.frontmatter.fileName}
-                image={blog.frontmatter.heroImage}
+                title={blog.title}
+                date={blog.writeDate}
+                fileName={blog.slug}
+                image={blog.blogHeroImage.publicUrl}
               />
             )
           })}

@@ -1,20 +1,29 @@
-import React, { useState } from "react"
-import Card from "@geist-ui/core/esm/card/card"
+import React, { useEffect, useState } from "react"
 import { Button, Text } from "@geist-ui/core"
-import Image from "@geist-ui/core/esm/image/image"
-import CardFooter from "@geist-ui/core/esm/card/card-footer"
-import { Link } from "gatsby-plugin-react-i18next"
 
-const BlogCardsContainer = data => {
-  const blogArray = data.data.nodes
+import BlogCard from "../page/blogcard"
 
+const BlogCardsContainer = ({ blogData }) => {
   const [btnDisabled, changeDisabled] = useState(true)
 
   const [blogShow, showMoreBlogs] = useState(3)
+
+  useEffect(() => {
+    const checkBtn = () => {
+      if (blogData.length < 3) {
+        changeDisabled(true)
+      } else {
+        changeDisabled(false)
+      }
+    }
+    checkBtn()
+  }, [])
   const showMore = () => {
-    if (blogArray.length < 3) {
+    if (blogData.length < 3) {
       changeDisabled(true)
     } else {
+      changeDisabled(false)
+
       showMoreBlogs(blogShow + 3)
     }
   }
@@ -24,41 +33,22 @@ const BlogCardsContainer = data => {
       <div className="w-[90%] m-auto">
         <h1 className="font-semibold text-4xl p-4">RECENT POSTS</h1>
         <div className="card container  flex justify-center flex-wrap ">
-          {blogArray.map((blogContent, index) => {
+          {blogData.slice(0, 3).map(blog => {
             return (
-              <div className="card-1 m-4 " key={blogContent.frontmatter.id}>
-                <Card width="100%" hoverable>
-                  <Image
-                    src={blogContent.frontmatter.heroImage}
-                    height="200px"
-                    width="300px"
-                    draggable={false}
-                    alt={blogContent.frontmatter.fileName}
-                  />
-                  <Text h4 mb={0}>
-                    Geist UI React
-                  </Text>
-                  <Text type="secondary" small>
-                    {blogContent.frontmatter.description}
-                  </Text>
-                  <Text>{blogContent.frontmatter.date}</Text>
-                  <CardFooter>
-                    <Link
-                      to={"/blog/" + blogContent.frontmatter.fileName}
-                      className="text-main"
-                    >
-                      Read more...
-                    </Link>
-                  </CardFooter>
-                </Card>
-              </div>
+              <BlogCard
+                key={blog.id}
+                title={blog.title}
+                date={blog.writeDate}
+                fileName={blog.slug}
+                image={blog.blogHeroImage.publicUrl}
+              />
             )
           })}
         </div>
         <h1 className="font-semibold text-4xl p-4">ALL </h1>
         <div className="w-[90%] m-auto">
           <div className="card container   flex  flex-wrap ">
-            {blogArray.slice(3, blogShow).map(blog => {
+            {blogData.slice(3, blogShow).map(blog => {
               return blog
             })}
           </div>

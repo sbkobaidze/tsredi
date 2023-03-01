@@ -2,8 +2,8 @@ import React from "react"
 
 const BlogContent = ({ title, image }) => {
   return (
-    <div className="w-full h-[60vh] max-[640px]:h-[70vh] dark:bg-black relative ">
-      <div class="custom-shape-divider-bottom-1677244345">
+    <div className="w-full h-[70vh] max-[640px]:h-[70vh] dark:bg-black relative ">
+      <div class="custom-shape-divider-bottom-1677244345 ">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,11 @@ const BlogContent = ({ title, image }) => {
           ></path>
         </svg>
       </div>
-      <div className="container flex  w-[80%] h-full font-main m-auto max-[900px]:flex-col ">
+      <div className="container flex  w-[80%] h-full font-main m-auto max-[900px]:flex-col  ">
         <div className="w-[50%] max-[900px]:w-[100%]">
           <h1 className="text-5xl font-semibold text-white pt-20">{title}</h1>
         </div>
-        <div className="w-[50%] max-[900px]:w-[100%]">
+        <div className="w-[50%] max-[900px]:w-[100%] z-20">
           <img src={image} alt="image"></img>
         </div>
       </div>

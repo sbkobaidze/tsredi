@@ -392,3 +392,12 @@ html {
     overflow-x: hidden;
   }
 }
+
+.post-1 h1 {
+  font-size: 50px;
+  line-height: 1.5;
+}
+.post-1 p {
+  margin: 25px 0;
+  line-height: 1.5;
+}

@@ -1,10 +1,11 @@
 import React from "react"
 import Card from "@geist-ui/core/esm/card/card"
-import { Button, Text } from "@geist-ui/core"
+import { Text } from "@geist-ui/core"
 import Image from "@geist-ui/core/esm/image/image"
 import CardFooter from "@geist-ui/core/esm/card/card-footer"
 import { Link } from "gatsby-plugin-react-i18next"
-const BlogCard = ({ title, image, description, date, fileName }) => {
+const BlogCard = ({ title, image, date, fileName }) => {
+  console.log(date)
   return (
     <div className="card-1 m-4 ">
       <Card width="100%" hoverable>
@@ -19,11 +20,9 @@ const BlogCard = ({ title, image, description, date, fileName }) => {
           {title}
         </Text>
         <Text type="secondary" small>
-          {description}
+          {date.slice(0, date.indexOf("T"))}
         </Text>
-        <Text type="secondary" small>
-          {date}
-        </Text>
+
         <CardFooter>
           <Link to={"/blog/" + fileName}>Read more...</Link>
         </CardFooter>

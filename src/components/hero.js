@@ -48,7 +48,7 @@ const Hero = ({ reffed }) => {
         <div className="h-[500px] w-[50%] max-[640px]:w-[100%] max-[640px]:right-0 max-[640px]:top-[40%]    absolute  right-20 ">
           <Lottie
             animationData={Animation}
-            style={{ height: "700px" }}
+            style={{ height: "600px" }}
           ></Lottie>
         </div>
       </div>

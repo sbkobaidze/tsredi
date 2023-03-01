@@ -12,7 +12,7 @@ const Testimonials = () => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className="spacer-2 relative h-[50vh] w-full bg-secondary ">
+      <div className="spacer-2 relative h-[60dvh] w-full bg-secondary ">
         <div className="header w-full flex absolute justify-center  text-textcolor z-30 top-[20%] max-[900px]:top-[15%] text-5xl font-main font-semibold">
           <h1>
             <MdFormatQuote size={80} />
