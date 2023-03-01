@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import BlogCard from "./blogcard"
+import BlogCard from "../blogcard"
 
 const ReadMore = ({ blogCount, blogId }) => {
   //avoid showing to same blog page

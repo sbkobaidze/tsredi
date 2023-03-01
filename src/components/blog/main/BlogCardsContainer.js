@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Button } from "@geist-ui/core"
 
-import BlogCard from "../page/blogcard"
+import BlogCard from "../blogcard"
 
 const BlogCardsContainer = ({ blogData }) => {
   const [btnDisabled, changeDisabled] = useState(true)

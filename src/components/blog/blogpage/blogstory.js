@@ -5,7 +5,7 @@ import { Button } from "@geist-ui/core"
 import { Link } from "gatsby"
 import User from "@geist-ui/core/esm/user/user"
 
-const BlogText = ({
+const BlogStory = ({
   blogCount,
   paragraph,
   writeDate,
@@ -14,7 +14,6 @@ const BlogText = ({
   authorSocialMedia,
   authorPic,
 }) => {
-  console.log(blogCount)
   const [nextPage, changeNextPage] = useState("/blog/")
 
   useEffect(() => {
@@ -73,4 +72,4 @@ const BlogText = ({
   )
 }
 
-export default BlogText
+export default BlogStory
