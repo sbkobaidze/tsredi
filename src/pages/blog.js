@@ -50,9 +50,11 @@ export const query = graphql`
           publicUrl
         }
 
-        blogParagraphImage {
+        authorSocialMedia
+        authorPic {
           publicUrl
         }
+
         blogParagraph {
           childMarkdownRemark {
             html

@@ -10,14 +10,17 @@ const Page = ({ data }) => {
 
   const blogJSON = JSON.stringify(data)
   const blogObj = JSON.parse(blogJSON).contentfulBlog
+  console.log(blogObj)
+
   const blogId = blogObj.id
   const blogHeroImage = blogObj.blogHeroImage.publicUrl
   const blogTitle = blogObj.title
   const blogParagraph = blogObj.blogParagraph.childMarkdownRemark.html
-  const blogParagraphImage = blogObj.blogParagraphImage.publicUrl
   const blogWrieDate = blogObj.writeDate
   const blogAuthor = blogObj.author
   const blogSlug = blogObj.slug
+  const blogAuthorMedia = blogObj.authorSocialMedia
+  const authorPic = blogObj.authorPic.publicUrl
 
   return (
     <div className="wrapper bg-[linear-gradient(135deg,#330867,#31a7bb)] ">
@@ -26,10 +29,11 @@ const Page = ({ data }) => {
         <BlogText
           paragraph={blogParagraph}
           writeDate={blogWrieDate}
-          paragraphImage={blogParagraphImage}
           author={blogAuthor}
           blogSlug={blogSlug}
           blogCount={blogCount}
+          authorPic={authorPic}
+          authorSocialMedia={blogAuthorMedia}
         />
         <ReadMore blogCount={blogCount} blogId={blogId} />
       </Layout>
@@ -47,15 +51,17 @@ export const query = graphql`
       blogHeroImage {
         publicUrl
       }
+      authorSocialMedia
+      authorPic {
+        publicUrl
+      }
 
       blogParagraph {
         childMarkdownRemark {
           html
         }
       }
-      blogParagraphImage {
-        publicUrl
-      }
+
       writeDate
     }
 
@@ -80,10 +86,11 @@ export const query = graphql`
         blogHeroImage {
           publicUrl
         }
-
-        blogParagraphImage {
+        authorSocialMedia
+        authorPic {
           publicUrl
         }
+
         blogParagraph {
           childMarkdownRemark {
             html
