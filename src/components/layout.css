@@ -394,10 +394,8 @@ html {
   line-height: 1.5;
 }
 
-* {
-  border: 1px solid red;
-}
-
-html {
-  width: auto;
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
