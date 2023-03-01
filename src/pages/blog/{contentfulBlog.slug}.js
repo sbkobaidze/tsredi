@@ -1,7 +1,7 @@
 import * as React from "react"
 import "../../components/layout.css"
 import { graphql } from "gatsby"
-import BlogText from "../../components/blog/page/blogtext"
+import BlogStory from "../../components/blog/page/blogstory"
 import Layout from "../../components/layout"
 import BlogContent from "../../components/blog/page/blogcontent"
 import ReadMore from "../../components/blog/page/readmore"
@@ -11,7 +11,6 @@ const Page = ({ data }) => {
 
   const blogJSON = JSON.stringify(data)
   const blogObj = JSON.parse(blogJSON).contentfulBlog
-  console.log(blogObj)
 
   const blogId = blogObj.id
   const blogHeroImage = blogObj.blogHeroImage.publicUrl
@@ -27,7 +26,7 @@ const Page = ({ data }) => {
     <div className="wrapper bg-[linear-gradient(135deg,#330867,#31a7bb)] ">
       <Layout>
         <BlogContent title={blogTitle} image={blogHeroImage} />
-        <BlogText
+        <BlogStory
           paragraph={blogParagraph}
           writeDate={blogWrieDate}
           author={blogAuthor}

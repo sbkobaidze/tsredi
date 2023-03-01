@@ -7,7 +7,7 @@ import { Card, Input, Button } from "@geist-ui/core"
 import { useState } from "react"
 import { toast } from "react-toastify"
 
-const NewsletterCard = () => {
+const NewsLetterCard = () => {
   const data = collection(firestore, "users")
 
   const [inputMsg, updateMsg] = useState("")
@@ -72,4 +72,4 @@ const NewsletterCard = () => {
   )
 }
 
-export default NewsletterCard
+export default NewsLetterCard

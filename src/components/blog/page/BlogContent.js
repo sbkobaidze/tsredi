@@ -1,6 +1,6 @@
 import React from "react"
 
-const BlogContent = ({ title, image }) => {
+const BlogStory = ({ title, image }) => {
   return (
     <div className="w-full h-[70vh] max-[640px]:h-[70vh] dark:bg-black relative ">
       <div class="custom-shape-divider-bottom-1677244345 ">
@@ -38,4 +38,4 @@ const BlogContent = ({ title, image }) => {
   )
 }
 
-export default BlogContent
+export default BlogStory

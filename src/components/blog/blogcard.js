@@ -5,7 +5,6 @@ import Image from "@geist-ui/core/esm/image/image"
 import CardFooter from "@geist-ui/core/esm/card/card-footer"
 import { Link } from "gatsby-plugin-react-i18next"
 const BlogCard = ({ title, image, date, fileName }) => {
-  console.log(date)
   return (
     <div className="card-1 m-4 ">
       <Card width="100%" hoverable>

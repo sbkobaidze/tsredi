@@ -44,7 +44,6 @@ const ReadMore = ({ blogCount, blogId }) => {
         </div>
         <div className="cards flex max-[900px]:flex-col ">
           {copyArray.map(blog => {
-            console.log(copyArray)
             return (
               <BlogCard
                 key={blog.id}
