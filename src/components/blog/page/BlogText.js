@@ -3,16 +3,16 @@ import NewsletterCard from "../main/newslettercard"
 import { ToastContainer } from "react-toastify"
 import { Button } from "@geist-ui/core"
 import { Link } from "gatsby"
-import UserLink from "@geist-ui/core/esm/user/user-link"
 import User from "@geist-ui/core/esm/user/user"
 
 const BlogText = ({
   blogCount,
   paragraph,
   writeDate,
-  paragraphImage,
   author,
   blogSlug,
+  authorSocialMedia,
+  authorPic,
 }) => {
   console.log(blogCount)
   const [nextPage, changeNextPage] = useState("/blog/")
@@ -44,12 +44,11 @@ const BlogText = ({
             <div className="post-1 text-2xl">
               <div dangerouslySetInnerHTML={{ __html: paragraph }}></div>
             </div>
-            <div className="img">
-              <img src={paragraphImage} alt="Tsredi Bulb - Marketing"></img>
-            </div>
             <div className="author-date  ">
               {" "}
-              <User name={author} scale={2}></User>
+              <Link to={authorSocialMedia} target="_blank">
+                <User name={author} src={authorPic} scale={2}></User>
+              </Link>
               <p className="block ml-4">
                 {writeDate.slice(0, writeDate.indexOf("T"))}
               </p>

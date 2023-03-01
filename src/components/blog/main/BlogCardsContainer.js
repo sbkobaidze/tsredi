@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Button, Text } from "@geist-ui/core"
+import { Button } from "@geist-ui/core"
 
 import BlogCard from "../page/blogcard"
 

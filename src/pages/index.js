@@ -6,7 +6,6 @@ import Hero from "../components/hero"
 import About from "../components/about"
 import Testimonials from "../components/testimonials"
 import Contact from "../components/contact"
-import Footer from "../components/footer"
 import Brands from "../components/brands"
 import Career from "../components/career"
 import { useRef } from "react"
@@ -17,7 +16,7 @@ import Layout from "../components/layout"
 const IndexPage = () => {
   const ref = useRef()
   return (
-    <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-0 h-[100%] overflow-y-hidden">
+    <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-1">
       <GeistProvider>
         <Layout>
           <Hero reffed={ref} />

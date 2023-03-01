@@ -1,13 +1,12 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Card from "@geist-ui/core/esm/card/card"
 import { Radio } from "@geist-ui/core"
 import { useState } from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Newservices = () => {
   const [t] = useTranslation()
-  const [text, changeText] = useState({
+  const [text] = useState({
     1: (
       <>
         <div className="h-[100%]">

@@ -64,16 +64,3 @@ export const query = graphql`
     }
   }
 `
-
-// allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-//   nodes {
-//     frontmatter {
-//       date
-//       description
-//       heroImage
-//       title
-//       fileName
-//     }
-//     id
-//   }
-// }

@@ -60,7 +60,7 @@ const Contact = forwardRef((_, ref) => {
       <Canvas className="absolute ">
         <Starbackground />
       </Canvas>
-      <div class="custom-shape-divider-top-1677344202">
+      <div className="custom-shape-divider-top-1677344202">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"

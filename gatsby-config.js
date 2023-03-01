@@ -10,7 +10,7 @@
 const { languages, defaultLanguage } = require("./language")
 
 require("dotenv").config({
-  path: `.env.production${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`,
 }),
   (module.exports = {
     siteMetadata: {

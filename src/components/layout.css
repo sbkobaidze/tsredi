@@ -385,12 +385,6 @@ html {
   transform: translateX(0);
 }
 
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 .post-1 h1 {
   font-size: 50px;
   line-height: 1.5;
@@ -402,4 +396,8 @@ body {
 
 * {
   border: 1px solid red;
+}
+
+html {
+  width: auto;
 }

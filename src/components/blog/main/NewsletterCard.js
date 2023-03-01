@@ -19,7 +19,6 @@ const NewsletterCard = () => {
   }
 
   const sendMsgToDB = async e => {
-    const date = Date.now()
     if (inputMsg.length < 4 || !inputMsg.includes("@")) {
       return toast("Wrong email")
     }
