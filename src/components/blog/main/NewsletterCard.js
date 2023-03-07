@@ -1,23 +1,23 @@
 import React from "react"
 import NewsletterAnimation from "../../Animations/icons8-subscribe.json"
 import Lottie from "lottie-react"
-import { firestore } from "../../database/firebase"
+import { firestore } from "../../../utils/firebase"
 import { addDoc, collection } from "@firebase/firestore"
 import { Card, Input, Button } from "@geist-ui/core"
 import { useState } from "react"
 import { toast } from "react-toastify"
 
-const NewsLetterCard = () => {
+const NewsLetterCard = ({ newsletterData }) => {
   const data = collection(firestore, "users")
 
   const [inputMsg, updateMsg] = useState("")
   const [loading, isLoading] = useState(false)
   const [lottiePlay, startPlaying] = useState(false)
-
   const inputState = e => {
     updateMsg(e.target.value)
   }
 
+  //send data to firebase
   const sendMsgToDB = async e => {
     if (inputMsg.length < 4 || !inputMsg.includes("@")) {
       return toast("Wrong email")
@@ -38,7 +38,7 @@ const NewsLetterCard = () => {
     <div>
       <Card width={"90%"}>
         <div className="flex">
-          <h2 className="text-xl mt-2 mr-1">SUBSCRIBE TO OUR NEWSLETTER</h2>
+          <h2 className="text-xl mt-2 mr-1">{newsletterData.header.text}</h2>
           <Lottie
             animationData={NewsletterAnimation}
             loop={lottiePlay}
@@ -48,7 +48,7 @@ const NewsLetterCard = () => {
         </div>
         <form className="input flex flex-col">
           <Input
-            placeholder="Your email"
+            placeholder={newsletterData.placeholder.text}
             scale={4 / 3}
             width="100%"
             value={inputMsg}
@@ -64,7 +64,7 @@ const NewsLetterCard = () => {
               color: "white",
             }}
           >
-            Submit
+            {newsletterData.button.text}
           </Button>
         </form>
       </Card>

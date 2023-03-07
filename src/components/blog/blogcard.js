@@ -4,26 +4,30 @@ import { Text } from "@geist-ui/core"
 import Image from "@geist-ui/core/esm/image/image"
 import CardFooter from "@geist-ui/core/esm/card/card-footer"
 import { Link } from "gatsby-plugin-react-i18next"
-const BlogCard = ({ title, image, date, fileName }) => {
+import { navigate } from "gatsby"
+import { defaultLanguage } from "../../../prismic-config"
+
+const BlogCard = ({ title, image, date, fileName, lang }) => {
+  const handleChange = e => {
+    if (lang === defaultLanguage) {
+      navigate(`/blog/${fileName}`)
+    } else {
+      navigate(`/${lang.slice(0, lang.indexOf("-"))}/blog/${fileName}`)
+    }
+  }
   return (
     <div className="card-1 m-4 ">
       <Card width="100%" hoverable>
-        <Image
-          src={image}
-          height="200px"
-          width="300px"
-          draggable={false}
-          alt={fileName + " - Tsredi"}
-        />
+        <Image src={image} height="200px" width="300px" draggable={false} />
         <Text h4 mb={0}>
           {title}
         </Text>
         <Text type="secondary" small>
-          {date.slice(0, date.indexOf("T"))}
+          {date}
         </Text>
 
         <CardFooter>
-          <Link to={"/blog/" + fileName}>Read more...</Link>
+          <p onClick={handleChange}>Read more...</p>
         </CardFooter>
       </Card>
     </div>

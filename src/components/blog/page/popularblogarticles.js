@@ -1,15 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import BlogCard from "../blogcard"
 
-const PopularBlogArticles = ({ blogCount, blogId }) => {
-  //avoid showing to same blog page
-  const copyArray = [...blogCount]
-
-  for (let blog of copyArray) {
-    if (blog.id === blogId) {
-      copyArray.splice(copyArray.indexOf(blog), 1)
+const PopularBlogArticles = ({ everyBlog, currentBlog, lang }) => {
+  const currentArticles = []
+  everyBlog.forEach(item => {
+    if (item.lang === lang) {
+      if (item.uid != currentBlog) {
+        currentArticles.push(item)
+      }
     }
-  }
+  })
+
+  const displayArticles = currentArticles.slice(0, 5)
 
   return (
     <div className="w-full h-[auto] font-main relative dark:bg-black ">
@@ -36,21 +38,22 @@ const PopularBlogArticles = ({ blogCount, blogId }) => {
           ></path>
         </svg>
       </div>
-      <div className="container w-[90%] m-auto">
+      <div className=" w-[90%] m-auto">
         <div className="header pt-20">
           <h1 className="text-5xl font-semibold text-white">
             POPULAR ARTICLES
           </h1>
         </div>
         <div className="cards flex max-[900px]:flex-col ">
-          {copyArray.map(blog => {
+          {displayArticles.map(blog => {
             return (
               <BlogCard
-                key={blog.id}
-                title={blog.title}
-                date={blog.writeDate}
-                fileName={blog.slug}
-                image={blog.blogHeroImage.publicUrl}
+                key={blog.data.uid}
+                title={blog.data.blogtitle.text}
+                date={blog.data.date}
+                uid={blog.uid}
+                image={blog.data.blogimage.url}
+                lang={blog.lang}
               />
             )
           })}

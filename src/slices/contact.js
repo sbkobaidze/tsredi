@@ -1,16 +1,37 @@
 import React, { useEffect } from "react"
-import emailjs from "@emailjs/browser"
 import { useRef } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { useState, forwardRef } from "react"
 import { Canvas } from "@react-three/fiber"
-import Starbackground from "./Animations/Starbackground"
+import Starbackground from "../components/Animations/Starbackground"
+import emailjs from "@emailjs/browser"
+import { sliderClasses } from "@mui/material"
 
-import { useTranslation } from "gatsby-plugin-react-i18next"
+export const Contact = ({ slice }) => {
+  const form = useRef()
 
-const Contact = forwardRef((_, ref) => {
-  const { t } = useTranslation()
+  const sendEmail = e => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        process.env.ACCOUNT_KEY,
+        process.env.TEMPLATE_KEY,
+        form?.current,
+        process.env.EMAILJS_API_KEY
+      )
+      .then(
+        result => {
+          console.log(result.text)
+        },
+        error => {
+          console.log(error.text)
+        }
+      )
+  }
+
+  const notify = e => toast(e)
 
   function checkForm() {
     if (
@@ -24,37 +45,27 @@ const Contact = forwardRef((_, ref) => {
       notify("Fill Out The Form!")
     }
   }
-  const notify = e => toast(e)
 
   const [loaded, isLoading] = useState(false)
   useEffect(() => {
     isLoading(true)
   })
-  const form = useRef()
 
-  const sendEmail = e => {
-    e.preventDefault()
+  const contactInputs = slice.items.map(inputData => {
+    return (
+      <input
+        className=" rounded-md h-10 max-[900px]:m-2  m-3 p-2"
+        type={inputData.type.text}
+        placeholder={inputData.placeholder.text}
+        id={inputData.placeholder.text}
+        required
+      />
+    )
+  })
 
-    emailjs
-      .sendForm(
-        "service_54ns71d",
-        "service_54ns71d",
-        form.current,
-        "FhRMTu902bGRHUPc3"
-      )
-      .then(
-        result => {
-          console.log(result.text)
-        },
-        error => {
-          console.log(error.text)
-        }
-      )
-  }
   return (
     <div
       className="spacer layer2 h-[100vh]  max-[900px]:h-[70vh] relative  dark:bg-black w-full "
-      ref={ref}
       id="contact"
     >
       <Canvas className="absolute ">
@@ -86,45 +97,25 @@ const Contact = forwardRef((_, ref) => {
       <div className="w-full flex justify-center items-center">
         <div className="input absolute h-[auto]   backdrop-blur  rounded-xl top-[22%] p-2 w-[50vw] max-[640px]:w-[90vw]  border-2 border-white">
           <h1 className="text-white text-3xl font-main font-semibold text-center my-5  max-[900px]:my-2 ">
-            {t("contact.header")}
+            {slice.primary.contactheader.text}
           </h1>
           <form
             className="flex flex-col px-10 max-[640px]:text-sm"
             ref={form}
             onSubmit={sendEmail}
           >
-            <input
-              className=" rounded-md h-10 max-[900px]:m-2  m-3 p-2"
-              type="text"
-              placeholder={t("contact.name")}
-              id="inputName"
-              required
-            />
-            <input
-              className=" rounded-md h-10 max-[900px]:m-2 m-3 p-2"
-              type="text"
-              placeholder={t("contact.email")}
-              id="inputEmail"
-              required
-            />
-            <input
-              className=" rounded-md h-10 max-[900px]:m-2 m-3 p-2"
-              type="text"
-              placeholder={t("contact.subject")}
-              id="subject"
-              required
-            />
+            {contactInputs}
 
             <textarea
               className=" rounded-md h-20 max-[900px]:h-20 m-3 max-[900px]:m-2 p-2"
-              placeholder={t("contact.message")}
+              placeholder="Message"
               required
-              id="text"
+              id={slice.primary.textarea.text}
             ></textarea>
             <input
               type="submit"
+              value={slice.primary.button.text}
               className="text-white bg-[linear-gradient(135deg,#FFDD00,#Fbb034)] rounded-md h-10 m-3 text-center font-main font-semibold cursor-pointer resize-none	"
-              placeholder={t("contact.submit")}
               onClick={() => checkForm()}
             ></input>
           </form>
@@ -133,6 +124,4 @@ const Contact = forwardRef((_, ref) => {
       <ToastContainer />
     </div>
   )
-})
-
-export default Contact
+}

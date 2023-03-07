@@ -3,14 +3,24 @@ import { Button } from "@geist-ui/core"
 
 import BlogCard from "../blogcard"
 
-const ArticleContainer = ({ blogData }) => {
+const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
   const [btnDisabled, changeDisabled] = useState(true)
 
   const [blogShow, showMoreBlogs] = useState(3)
 
+  const currentLangBlogs = []
+
+  blogData.forEach(blog => {
+    if (blog.lang === currentLang) {
+      currentLangBlogs.push(blog)
+    }
+  })
+
+  console.log(currentLangBlogs)
+
   useEffect(() => {
     const checkBtn = () => {
-      if (blogData.length < 3) {
+      if (currentLangBlogs.length < 3) {
         changeDisabled(true)
       } else {
         changeDisabled(false)
@@ -18,8 +28,10 @@ const ArticleContainer = ({ blogData }) => {
     }
     checkBtn()
   }, [])
+
+  //load more blogs
   const showMore = () => {
-    if (blogData.length < 3) {
+    if (currentLangBlogs.length < 3) {
       changeDisabled(true)
     } else {
       changeDisabled(false)
@@ -31,16 +43,18 @@ const ArticleContainer = ({ blogData }) => {
   return (
     <div className="h-auto bg-secondary  w-full font-main ">
       <div className="w-[90%] m-auto">
-        <h1 className="font-semibold text-4xl p-4">RECENT POSTS</h1>
+        <h1 className="font-semibold text-4xl p-4">{pageHeader}</h1>
         <div className="card container  flex justify-center flex-wrap ">
-          {blogData.slice(0, 3).map(blog => {
+          {currentLangBlogs.slice(0, 3).map(blog => {
+            console.log(blog.date)
             return (
               <BlogCard
                 key={blog.id}
-                title={blog.title}
-                date={blog.writeDate}
-                fileName={blog.slug}
-                image={blog.blogHeroImage.publicUrl}
+                title={blog.data.blogtitle.text}
+                date={blog.data.date}
+                fileName={blog.uid}
+                image={blog.data.blogimage.url}
+                lang={currentLang}
               />
             )
           })}
@@ -48,9 +62,9 @@ const ArticleContainer = ({ blogData }) => {
         <h1 className="font-semibold text-4xl p-4">ALL </h1>
         <div className="w-[90%] m-auto">
           <div className="card container   flex  flex-wrap ">
-            {blogData.slice(3, blogShow).map(blog => {
+            {/* {blogData.slice(3, blogShow).map(blog => {
               return blog
-            })}
+            })} */}
           </div>
           <div className="flex w-full justify-center">
             <Button disabled={btnDisabled} onClick={showMore}>

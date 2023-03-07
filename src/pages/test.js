@@ -2,32 +2,49 @@ import * as React from "react"
 
 import "../components/layout.css"
 import { graphql } from "gatsby"
-import Hero from "../components/hero"
-import About from "../components/about"
-import Testimonials from "../components/testimonials"
-import Contact from "../components/contact"
-import Brands from "../components/brands"
-import Career from "../components/career"
+import About from "../slices/about"
+import Testimonials from "../slices/testimonials"
+import Contact from "../slices/contact"
+import Brands from "../slices/brands"
+import Career from "../slices/career"
 import { useRef } from "react"
-import Newservices from "../components/newservices"
+import Newservices from "../slices/services"
 import { GeistProvider } from "@geist-ui/core"
-import Layout from "../components/layout"
+import Footer from "../components/footer"
+import Copyright from "../components/copyright"
+import { useEffect } from "react"
 
-const IndexPage = () => {
-  const ref = useRef()
+const IndexPage = ({ data }) => {
+  //
+  console.log(data)
+  const currentPage = data.prismicHomepage
+
+  const lang = currentPage.lang
+  const altLang = currentPage.alternate_languages
+
+  //languages
+
+  //scroll animations
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".hid")
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show")
+        } else {
+          entry.target.classList.remove("show")
+        }
+      })
+    })
+
+    hiddenElements.forEach(el => observer.observe(el))
+  })
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]  dark:bg-black border-1">
       <GeistProvider>
-        <Layout>
-          <Hero reffed={ref} />
-
-          <Brands />
-          <Newservices />
-          <About />
-          <Testimonials />
-          <Contact ref={ref} />
-          <Career />
-        </Layout>
+        <About />
+        <Footer />
+        <Copyright />
       </GeistProvider>
     </div>
   )
@@ -88,16 +105,16 @@ export const Head = () => (
 export default IndexPage
 
 export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(
-      filter: { ns: { in: ["language"] }, language: { eq: $language } }
-    ) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
+  query ($lang: String) {
+    prismicHomepage(lang: { eq: $lang }) {
+      lang
+      id
+
+      alternate_languages {
+        lang
+        id
+        type
+        uid
       }
     }
   }
