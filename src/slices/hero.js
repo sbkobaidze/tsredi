@@ -2,19 +2,19 @@ import React from "react"
 import { Button } from "@mui/material"
 import Animation from "../components/Animations/aboutAnimation.json"
 import Lottie from "lottie-react"
-import { Link, useStaticQuery, graphql } from "gatsby"
 import { Canvas } from "@react-three/fiber"
 import Starbackground from "../components/Animations/Starbackground"
 
-export const Hero = ({ reffed, slice }) => {
+export const Hero = ({ slice }) => {
   const heroData = slice.primary
 
-  const scrollToContact = () => {
-    reffed.current.scrollIntoView({ behavior: "smooth" })
-  }
+  //star animations
 
   return (
-    <div className="relative w-full h-[100vh] dark:bg-black  sm:h-[90vh]">
+    <div
+      className="relative w-full h-[100vh] dark:bg-black  sm:h-[90vh]"
+      id="hero"
+    >
       <Canvas style={{ position: "absolute" }}>
         <Starbackground />
       </Canvas>
@@ -33,21 +33,60 @@ export const Hero = ({ reffed, slice }) => {
       </div>
 
       <div className=" h-full w-[80%] relative mx-auto inherit  z-10    ">
-        <div className="text-white text-7xl top-[20%]  font-main font-semibold z-20 absolute left-0  sm:top-[10%] sm:text-6xl">
-          <h1 className="mb-3 text-5xl " id="canvas3d">
+        <div className="text-white text-7xl top-[25%]  font-main font-semibold z-20 absolute left-0  sm:top-[10%] sm:text-6xl">
+          <h1 className="mb-3 text-7xl " id="canvas3d">
             {heroData.header.text}
           </h1>
-          <h1 className="dark:text-[#8A2BE2] text-neongreen  my-2 text-5xl">
+          <h1 className="effectedtext  my-2 text-7xl">
             {" "}
             {heroData.description.text}
+            <span className="effectContainer">
+              <span className="effectStar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                >
+                  <path d="M15.765,2.434l2.875,8.512l8.983,0.104c0.773,0.009,1.093,0.994,0.473,1.455l-7.207,5.364l2.677,8.576 c0.23,0.738-0.607,1.346-1.238,0.899L15,22.147l-7.329,5.196c-0.63,0.447-1.468-0.162-1.238-0.899l2.677-8.576l-7.207-5.364 c-0.62-0.461-0.3-1.446,0.473-1.455l8.983-0.104l2.875-8.512C14.482,1.701,15.518,1.701,15.765,2.434z"></path>
+                </svg>
+              </span>
+              <span className="effectStar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                >
+                  <path d="M15.765,2.434l2.875,8.512l8.983,0.104c0.773,0.009,1.093,0.994,0.473,1.455l-7.207,5.364l2.677,8.576 c0.23,0.738-0.607,1.346-1.238,0.899L15,22.147l-7.329,5.196c-0.63,0.447-1.468-0.162-1.238-0.899l2.677-8.576l-7.207-5.364 c-0.62-0.461-0.3-1.446,0.473-1.455l8.983-0.104l2.875-8.512C14.482,1.701,15.518,1.701,15.765,2.434z"></path>
+                </svg>
+              </span>
+              <span className="effectStar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                >
+                  <path d="M15.765,2.434l2.875,8.512l8.983,0.104c0.773,0.009,1.093,0.994,0.473,1.455l-7.207,5.364l2.677,8.576 c0.23,0.738-0.607,1.346-1.238,0.899L15,22.147l-7.329,5.196c-0.63,0.447-1.468-0.162-1.238-0.899l2.677-8.576l-7.207-5.364 c-0.62-0.461-0.3-1.446,0.473-1.455l8.983-0.104l2.875-8.512C14.482,1.701,15.518,1.701,15.765,2.434z"></path>
+                </svg>
+              </span>
+            </span>
           </h1>
-          <Button
-            sx={{ color: "white", fontWeight: "bold" }}
-            className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]  my-2 font-main  w-60 h-16 border-3"
-            onClick={scrollToContact}
-          >
-            {heroData.button.text}
-          </Button>
+          <div className="block">
+            <Button
+              sx={{ color: "white", fontWeight: "bold" }}
+              className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]  my-2 font-main  w-60 h-16 border-3"
+            >
+              {heroData.button.text}
+            </Button>
+          </div>
         </div>
         <div className="h-[500px] w-[50%]  top-[10%]   right-0  absolute sm:translate-y-[250px] sm:w-[100%]  ">
           <Lottie

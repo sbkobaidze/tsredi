@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useRef } from "react"
 import { graphql } from "gatsby"
 import "../components/layout.css"
 import Seo from "../components/seo"
@@ -8,23 +8,22 @@ import { components } from "../slices/index"
 import Footer from "../components/footer"
 import Copyright from "../components/copyright"
 import Header from "../components/header"
+import Layout from "../components/layout"
+import { Script } from "gatsby"
 
 const Homepage = ({ data }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
 
+  console.log(navbar)
+
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
       <PrismicProvider>
-        <Header context={document} headerData={navbar} />
-        <SliceZone
-          components={components}
-          slices={document.data.body}
-          context={document}
-        />
-        <Footer footerData={footer} />
-        <Copyright />
+        <Layout footerData={footer} context={document} headerData={navbar}>
+          <SliceZone components={components} slices={document.data.body} />
+        </Layout>
       </PrismicProvider>
     </div>
   )
@@ -91,6 +90,7 @@ export const query = graphql`
               }
               logo {
                 gatsbyImageData(height: 100)
+                alt
               }
             }
             primary {

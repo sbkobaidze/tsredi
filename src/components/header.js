@@ -7,25 +7,40 @@ const Header = ({ headerData, context }) => {
   const [theme, changeTheme] = useState("dark")
   const [mobilenav, changeNav] = useState("wop")
 
-  const mobileMenuHeaders = headerData.body[0].items.map((item, index) => {
-    return (
-      <Link to={`/${item.link.text.toLowerCase()}`} key={index}>
-        <li className="my-3">{item.header.text.toUpperCase()}</li>
-      </Link>
-    )
+  const pageHeaders = headerData.body[0].items.map((item, index) => {
+    if (item.link.text === "blog") {
+      return (
+        <Link
+          to={`/${item.link.text.toLowerCase()}`}
+          key={index}
+          onClick={e => scrollToDiv(item.link.text, e)}
+          style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
+        >
+          <li className="my-3">{item.header.text.toUpperCase()}</li>
+        </Link>
+      )
+    } else {
+      return (
+        <Link
+          to={`/#${item.link.text.toLowerCase()}`}
+          key={index}
+          onClick={e => scrollToDiv(item.link.text, e)}
+          style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
+        >
+          <li className=" sm:my-3">{item.header.text.toUpperCase()}</li>
+        </Link>
+      )
+    }
   })
 
-  const desktopHeaders = headerData.body[0].items.map((item, index) => {
-    return (
-      <Link
-        to={`/${item.link.text.toLowerCase()}`}
-        key={index}
-        style={{ margin: "0 5px", fontFamily: "Kanit" }}
-      >
-        <li>{item.header.text.toUpperCase()}</li>
-      </Link>
-    )
-  })
+  const scrollToDiv = (path, e) => {
+    if (path != "blog") {
+      setTimeout(() => {
+        let scroll = document.getElementById(`${path}`).offsetTop
+        window.scrollTo({ top: scroll, behavior: "smooth" })
+      }, 100)
+    }
+  }
 
   useEffect(() => {
     if (theme === "dark") {
@@ -61,7 +76,6 @@ const Header = ({ headerData, context }) => {
       xShow(false)
     }
   }
-  console.log(headerData)
 
   return (
     <div className="relative">
@@ -72,7 +86,7 @@ const Header = ({ headerData, context }) => {
         }
       >
         <ul className={" block text-xl font-semibold"}>
-          {mobileMenuHeaders}
+          {pageHeaders}
           <LanguageSwitcher
             lang={context.lang}
             altLang={context.alternate_languages}
@@ -92,7 +106,7 @@ const Header = ({ headerData, context }) => {
           </div>
           <div className="  flex-row flex  items-center mt-1  ">
             <ul className="flex font-bold items-center sm:hidden ">
-              {desktopHeaders}
+              {pageHeaders}
               <li className="mx-3">
                 <LanguageSwitcher
                   lang={context.lang}

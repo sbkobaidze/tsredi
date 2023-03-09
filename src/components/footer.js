@@ -5,12 +5,35 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const Footer = ({ footerData }) => {
   const footerHeaders = footerData.data.body[0].items.map(header => {
-    return (
-      <Link to={"/" + header.header.text}>
-        <li className="mx-2">{header.header.text}</li>
-      </Link>
-    )
+    if (header.link.text === "blog") {
+      return (
+        <Link
+          to={"/" + header.link.text}
+          onClick={e => scrollToDiv(header.link.text, e)}
+        >
+          <li className="mx-2">{header.header.text.toUpperCase()}</li>
+        </Link>
+      )
+    } else {
+      return (
+        <Link
+          to={"/#" + header.link.text}
+          onClick={e => scrollToDiv(header.link.text, e)}
+        >
+          <li className="mx-2">{header.header.text.toUpperCase()}</li>
+        </Link>
+      )
+    }
   })
+
+  const scrollToDiv = (path, e) => {
+    if (path != "blog") {
+      setTimeout(() => {
+        let scroll = document.getElementById(`${path}`).offsetTop
+        window.scrollTo({ top: scroll, behavior: "smooth" })
+      }, 100)
+    }
+  }
 
   return (
     <div className="w-full   p-10 dark:bg-black ">

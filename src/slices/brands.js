@@ -13,7 +13,7 @@ export const Brands = ({ slice }) => {
         <a href={item.link.url} target="_blank">
           <GatsbyImage
             image={item.logo.gatsbyImageData}
-            alt="test"
+            alt={item.logo.alt}
           ></GatsbyImage>
         </a>
       </SwiperSlide>
@@ -21,7 +21,7 @@ export const Brands = ({ slice }) => {
   })
 
   return (
-    <div className="w-full bg-secondary h-auto">
+    <div className="w-full bg-secondary h-auto" id="brands">
       <div className="font-semibold text-4xl text-center text-textcolor font-main mx-6 max-[800px]:mx-0 py-3 tracking-[4px] max-[640px]:text-2xl max-[900px]:text-3xl">
         <h2>{slice.primary.eyebrow_headline.text}</h2>
       </div>

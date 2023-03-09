@@ -6,9 +6,8 @@ import { useState, forwardRef } from "react"
 import { Canvas } from "@react-three/fiber"
 import Starbackground from "../components/Animations/Starbackground"
 import emailjs from "@emailjs/browser"
-import { sliderClasses } from "@mui/material"
 
-export const Contact = ({ slice }) => {
+export const Contact = ({ slice, context }) => {
   const form = useRef()
 
   const sendEmail = e => {
@@ -95,7 +94,7 @@ export const Contact = ({ slice }) => {
         </svg>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="input absolute h-[auto]   backdrop-blur  rounded-xl top-[22%] p-2 w-[50vw] max-[640px]:w-[90vw]  border-2 border-white">
+        <div className="input absolute h-[auto]   backdrop-blur  rounded-xl top-[22%] p-2 w-[50vw] sm:w-[90vw]  border-2 border-white">
           <h1 className="text-white text-3xl font-main font-semibold text-center my-5  max-[900px]:my-2 ">
             {slice.primary.contactheader.text}
           </h1>

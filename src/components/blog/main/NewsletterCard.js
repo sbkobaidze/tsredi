@@ -38,7 +38,7 @@ const NewsLetterCard = ({ newsletterData }) => {
     <div>
       <Card width={"90%"}>
         <div className="flex">
-          <h2 className="text-xl mt-2 mr-1">{newsletterData.header.text}</h2>
+          {/* <h2 className="text-xl mt-2 mr-1">{newsletterData.header.text}</h2> */}
           <Lottie
             animationData={NewsletterAnimation}
             loop={lottiePlay}
@@ -48,7 +48,7 @@ const NewsLetterCard = ({ newsletterData }) => {
         </div>
         <form className="input flex flex-col">
           <Input
-            placeholder={newsletterData.placeholder.text}
+            // placeholder={newsletterData.placeholder.text}
             scale={4 / 3}
             width="100%"
             value={inputMsg}
@@ -64,7 +64,7 @@ const NewsLetterCard = ({ newsletterData }) => {
               color: "white",
             }}
           >
-            {newsletterData.button.text}
+            {/* {newsletterData.button.text} */}
           </Button>
         </form>
       </Card>

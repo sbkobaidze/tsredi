@@ -6,7 +6,10 @@ import UserLink from "@geist-ui/core/esm/user/user-link"
 export const Testimonials = ({ slice }) => {
   const testimonialCards = slice.items.map(testimonial => {
     return (
-      <div className="card bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl  box-shadow-black w-[49%] sm:w-[100%]  sm:h-[48%] h-[100%] flex flex-col p-4 my-4">
+      <div
+        className="card bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl  box-shadow-black w-[49%] sm:w-[100%]  sm:h-[48%] h-[100%] flex flex-col p-4 my-4"
+        id="testimonials"
+      >
         <div className="quotes">
           <MdFormatQuote size={80} style={{ color: "white" }} />
         </div>

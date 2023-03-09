@@ -50,6 +50,7 @@ export const query = graphql`
   query ($lang: String) {
     prismicBlogmain(lang: { eq: $lang }) {
       lang
+      uid
       alternate_languages {
         id
         type
