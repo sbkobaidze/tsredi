@@ -1,13 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import BlogCard from "../blogcard"
 
-const PopularBlogArticles = ({ everyBlog, currentBlog, lang }) => {
+const PopularBlogArticles = ({ everyBlog, currentBlog }) => {
   const currentArticles = []
   everyBlog.forEach(item => {
-    if (item.lang === lang) {
-      if (item.uid != currentBlog) {
-        currentArticles.push(item)
-      }
+    if (item.uid != currentBlog) {
+      currentArticles.push(item)
     }
   })
 

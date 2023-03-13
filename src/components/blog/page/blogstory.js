@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { ToastContainer } from "react-toastify"
-import { Button } from "@geist-ui/core"
 import { Link } from "gatsby"
 import User from "@geist-ui/core/esm/user/user"
-import NewsLetterCard from "../main/newslettercard"
+import Subscribe from "../subscribe"
 
 const BlogStory = ({
   paragraph,
   author,
   date,
-  currentBlog,
-  everyBlog,
-  lang,
+
   newsletter,
 }) => {
-  const [nextPage, changeNextPage] = useState(`/${lang}/blog/`)
-
   //Blog Paragraph
   const blogText = (
     <div className="post-1 text-2xl">
@@ -38,7 +33,7 @@ const BlogStory = ({
       <ToastContainer />
       <div className="flex justify-center ">
         <div className="sticky w-[40%] max-[640px]:w-[80%] ">
-          <NewsLetterCard newsletterData={newsletter} />
+          <Subscribe newsLetterData={newsletter} />
         </div>
       </div>
       <div className="w-[90%] m-auto font-main mt-20 leading-10 ">

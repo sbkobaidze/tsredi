@@ -3,16 +3,15 @@ import Card from "@geist-ui/core/esm/card/card"
 import { Text } from "@geist-ui/core"
 import Image from "@geist-ui/core/esm/image/image"
 import CardFooter from "@geist-ui/core/esm/card/card-footer"
-import { Link } from "gatsby-plugin-react-i18next"
 import { navigate } from "gatsby"
 import { defaultLanguage } from "../../../prismic-config"
 
-const BlogCard = ({ title, image, date, fileName, lang }) => {
+const BlogCard = ({ title, image, date, uid, lang }) => {
   const handleChange = e => {
     if (lang === defaultLanguage) {
-      navigate(`/blog/${fileName}`)
+      navigate(`/blog/${uid}`)
     } else {
-      navigate(`/${lang.slice(0, lang.indexOf("-"))}/blog/${fileName}`)
+      navigate(`/${lang.slice(0, lang.indexOf("-"))}/blog/${uid}`)
     }
   }
   return (

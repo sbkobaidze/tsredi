@@ -7,9 +7,12 @@ export const Career = ({ slice }) => {
   const vacancies = slice.items.map((item, index) => {
     return (
       <CollapseGroup>
-        <Collapse title={item.vacancyname.text.toUpperCase()}>
+        <Collapse
+          title={item.vacancyname.text.toUpperCase()}
+          className="careers-collapse"
+        >
           <p className="font-main text-normal">{item.description.text}</p>
-          <a href={item.formlink.url} className="underline ">
+          <a href={item.formlink.url} className="underline text-xl ">
             {item.button.text.toUpperCase()}
           </a>
         </Collapse>

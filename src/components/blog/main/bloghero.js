@@ -1,6 +1,6 @@
 import React from "react"
-import NewsletterCard from "./NewsletterCard"
 import { ToastContainer } from "react-toastify"
+import Subscribe from "../subscribe"
 import Lottie from "lottie-react"
 import bloganimation from "../../Animations/bloganimation.json"
 
@@ -12,7 +12,7 @@ const BlogHero = ({ pageHeader, newsletter }) => {
         <div className="text  absolute top-[15%] left-[10%] z-40 max-[640px]:top-[15%]">
           <h1 className="text-6xl text-white ">{pageHeader}</h1>
           <div className="newsletter my-2">
-            <NewsletterCard newsLetterData={newsletter} />
+            <Subscribe newsLetterData={newsletter} />
           </div>
         </div>
         <div className=" absolute z-30 right-0  overflow-hidden max-[640px]:top-[20%] max-[640px]:left-1 ">

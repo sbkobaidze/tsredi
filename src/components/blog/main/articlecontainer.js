@@ -16,8 +16,6 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
     }
   })
 
-  console.log(currentLangBlogs)
-
   useEffect(() => {
     const checkBtn = () => {
       if (currentLangBlogs.length < 3) {

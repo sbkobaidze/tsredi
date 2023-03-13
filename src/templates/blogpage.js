@@ -9,12 +9,13 @@ import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
 
 const blogpage = ({ data }) => {
-  console.log(data)
   const document = data.prismicBlog || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
   const newsletter = data.prismicBlogmain.data.body[0].primary || {}
   const allBlogs = data.allPrismicBlog.nodes || {}
+
+  console.log(allBlogs)
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
       <Header headerData={navbar} context={document} />
@@ -90,7 +91,10 @@ export const query = graphql`
       }
     }
 
-    allPrismicBlog {
+    allPrismicBlog(
+      sort: { data: { date: DESC } }
+      filter: { lang: { eq: $lang } }
+    ) {
       nodes {
         id
         uid

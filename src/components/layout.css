@@ -469,3 +469,7 @@ body {
 .effectStar > svg > path {
   fill: #8a2be2;
 }
+
+#careers .title {
+  color: white;
+}

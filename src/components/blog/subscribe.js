@@ -1,13 +1,13 @@
 import React from "react"
-import NewsletterAnimation from "../../Animations/icons8-subscribe.json"
+import NewsletterAnimation from "../Animations/icons8-subscribe.json"
 import Lottie from "lottie-react"
-import { firestore } from "../../../utils/firebase"
+import { firestore } from "../../utils/firebase"
 import { addDoc, collection } from "@firebase/firestore"
 import { Card, Input, Button } from "@geist-ui/core"
 import { useState } from "react"
 import { toast } from "react-toastify"
 
-const NewsLetterCard = ({ newsletterData }) => {
+const Subscribe = ({ newsLetterData }) => {
   const data = collection(firestore, "users")
 
   const [inputMsg, updateMsg] = useState("")
@@ -34,11 +34,12 @@ const NewsLetterCard = ({ newsletterData }) => {
       console.log(error)
     }
   }
+
   return (
     <div>
       <Card width={"90%"}>
         <div className="flex">
-          {/* <h2 className="text-xl mt-2 mr-1">{newsletterData.header.text}</h2> */}
+          <h2 className="text-xl mt-2 mr-1">{newsLetterData.header.text}</h2>
           <Lottie
             animationData={NewsletterAnimation}
             loop={lottiePlay}
@@ -48,7 +49,7 @@ const NewsLetterCard = ({ newsletterData }) => {
         </div>
         <form className="input flex flex-col">
           <Input
-            // placeholder={newsletterData.placeholder.text}
+            placeholder={newsLetterData.placeholder.text}
             scale={4 / 3}
             width="100%"
             value={inputMsg}
@@ -64,7 +65,7 @@ const NewsLetterCard = ({ newsletterData }) => {
               color: "white",
             }}
           >
-            {/* {newsletterData.button.text} */}
+            {newsLetterData.button.text}
           </Button>
         </form>
       </Card>
@@ -72,4 +73,4 @@ const NewsLetterCard = ({ newsletterData }) => {
   )
 }
 
-export default NewsLetterCard
+export default Subscribe

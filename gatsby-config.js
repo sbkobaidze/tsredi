@@ -8,8 +8,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-const { languages, defaultLanguage } = require("./language")
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -75,13 +73,6 @@ module.exports = {
 
         enableWebVitalsTracking: true,
         // Defaults to https://www.googletagmanager.com
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/locales`,
-        name: `locale`,
       },
     },
   ],

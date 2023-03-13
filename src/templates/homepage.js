@@ -1,22 +1,16 @@
-import React, { useRef } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import "../components/layout.css"
 import Seo from "../components/seo"
 import { SliceZone } from "@prismicio/react"
 import { PrismicProvider } from "@prismicio/react"
 import { components } from "../slices/index"
-import Footer from "../components/footer"
-import Copyright from "../components/copyright"
-import Header from "../components/header"
 import Layout from "../components/layout"
-import { Script } from "gatsby"
 
-const Homepage = ({ data }) => {
+const Homepage = ({ data, pageContext }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
-
-  console.log(navbar)
 
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">

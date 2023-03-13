@@ -94,7 +94,7 @@ export const query = graphql`
       }
     }
 
-    allPrismicBlog {
+    allPrismicBlog(sort: { data: { date: DESC } }) {
       nodes {
         id
         uid
