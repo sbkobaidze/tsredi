@@ -33,16 +33,18 @@ export const Contact = ({ slice, context }) => {
   const notify = e => toast(e)
 
   function checkForm() {
-    if (
-      document.getElementById("inputName").value &&
-      document.getElementById("inputEmail").value &&
-      document.getElementById("subject").value &&
-      document.getElementById("text").value
-    ) {
-      notify("Email Sent!")
-    } else {
-      notify("Fill Out The Form!")
-    }
+    if (window != "undefined")
+      if (
+        // document.getElementById("inputName").value &&
+        // document.getElementById("inputEmail").value &&
+        // document.getElementById("subject").value &&
+        // document.getElementById("text").value
+        1
+      ) {
+        notify("Email Sent!")
+      } else {
+        notify("Fill Out The Form!")
+      }
   }
 
   const [loaded, isLoading] = useState(false)
