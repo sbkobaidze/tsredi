@@ -7,7 +7,7 @@ import { PrismicProvider } from "@prismicio/react"
 import { components } from "../slices/index"
 import Layout from "../components/layout"
 
-const Homepage = ({ data, pageContext }) => {
+const Homepage = ({ data }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
