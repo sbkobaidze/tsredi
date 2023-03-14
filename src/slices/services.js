@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect } from "react"
+import React from "react"
 import Card from "@geist-ui/core/esm/card/card"
 import { Radio } from "@geist-ui/core"
 import { useState } from "react"
@@ -13,13 +13,15 @@ export const Services = ({ slice }) => {
   const handler = val => {
     setState(val)
   }
+
   //Classname 'hid' is passed to play viewport animation
+
   const showServiceCardTitles = slice.items.map((cardData, index) => {
     return (
       <Card
         onClick={() => handler(`${index}`)}
         hoverable
-        className="hid md:w-full"
+        className="hid md:w-full hover:bg-main"
         style={{
           margin: "0 10px 10px 10px",
           backgroundColor: "#F8F9F5",

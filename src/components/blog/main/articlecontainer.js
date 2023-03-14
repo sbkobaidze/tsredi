@@ -50,7 +50,7 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
                 key={blog.id}
                 title={blog.data.blogtitle.text}
                 date={blog.data.date}
-                fileName={blog.uid}
+                uid={blog.uid}
                 image={blog.data.blogimage.url}
                 lang={currentLang}
               />

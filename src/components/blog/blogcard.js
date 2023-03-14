@@ -26,7 +26,12 @@ const BlogCard = ({ title, image, date, uid, lang }) => {
         </Text>
 
         <CardFooter>
-          <p onClick={handleChange}>Read more...</p>
+          <p
+            onClick={handleChange}
+            className="hover:text-hovercolor cursor-pointer"
+          >
+            Read more...
+          </p>
         </CardFooter>
       </Card>
     </div>

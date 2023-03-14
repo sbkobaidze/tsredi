@@ -8,7 +8,7 @@ import BlogStory from "../components/blog/page/blogstory"
 import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
 
-const blogpage = ({ data }) => {
+const Blogpage = ({ data }) => {
   const document = data.prismicBlog || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
@@ -42,8 +42,6 @@ const blogpage = ({ data }) => {
   )
 }
 
-export default blogpage
-
 export const Head = ({ data }) => (
   <Seo
     title={data.prismicBlog.data.blogtitle.text}
@@ -54,6 +52,7 @@ export const Head = ({ data }) => (
 export const query = graphql`
   query ($lang: String) {
     prismicBlog(lang: { eq: $lang }) {
+      _previewable
       id
       lang
       alternate_languages {
@@ -206,3 +205,4 @@ export const query = graphql`
     }
   }
 `
+export default Blogpage

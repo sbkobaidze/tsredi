@@ -32,6 +32,7 @@ module.exports = {
       white: "#FFF",
       black: "#000",
       secondary: "#D9D9D9",
+      hovercolor: "#cbccc6",
     },
     fontFamily: {
       main: ["Kanit"],

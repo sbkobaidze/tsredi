@@ -1,7 +1,7 @@
 import React from "react"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
-import { Link } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
+import {Link} from 'gatsby'
 
 const Footer = ({ footerData }) => {
   const footerHeaders = footerData.data.body[0].items.map(header => {
@@ -11,7 +11,9 @@ const Footer = ({ footerData }) => {
           to={"/" + header.link.text}
           onClick={e => scrollToDiv(header.link.text, e)}
         >
-          <li className="mx-2">{header.header.text.toUpperCase()}</li>
+          <li className="mx-2 hover:text-hovercolor">
+            {header.header.text.toUpperCase()}
+          </li>
         </Link>
       )
     } else {
@@ -20,7 +22,9 @@ const Footer = ({ footerData }) => {
           to={"/#" + header.link.text}
           onClick={e => scrollToDiv(header.link.text, e)}
         >
-          <li className="mx-2">{header.header.text.toUpperCase()}</li>
+          <li className="mx-2 hover:text-hovercolor">
+            {header.header.text.toUpperCase()}
+          </li>
         </Link>
       )
     }
@@ -49,7 +53,7 @@ const Footer = ({ footerData }) => {
               </Link>
             </div>
             <div className="flex flex-col pt-1">
-              <div className="ml-[23px] font-main font-semibold">
+              <div className="ml-[23px] font-main font-semibold hover:text-hovercolor">
                 {footerData.data.email.text}
               </div>
               <div className="flex items-center  ml-[23px] w-full mt-2">
@@ -58,20 +62,29 @@ const Footer = ({ footerData }) => {
                   target="_blank"
                 >
                   {" "}
-                  <FaFacebook className="mr-1" size={20} />{" "}
+                  <FaFacebook
+                    className="mr-1 hover:text-hovercolor"
+                    size={20}
+                  />{" "}
                 </a>
                 <a
                   href={footerData.data.body[0].primary.linkedin.url}
                   target="_blank"
                 >
                   {" "}
-                  <FaLinkedin className="mr-1" size={20} />
+                  <FaLinkedin
+                    className="mr-1 hover:text-hovercolor"
+                    size={20}
+                  />
                 </a>
                 <a href={footerData.data.body[0].primary.instagram.url}>
-                  <FaInstagram className="mr-1" size={20} />
+                  <FaInstagram
+                    className="mr-1 hover:text-hovercolor"
+                    size={20}
+                  />
                 </a>
                 <a href={footerData.data.body[0].primary.twitter.url}>
-                  <FaTwitter className="mr-1" size={20} />
+                  <FaTwitter className="mr-1 hover:text-hovercolor" size={20} />
                 </a>
               </div>
             </div>

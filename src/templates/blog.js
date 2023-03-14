@@ -44,11 +44,10 @@ export const Head = ({ data }) => (
   />
 )
 
-export default Blog
-
 export const query = graphql`
   query ($lang: String) {
     prismicBlogmain(lang: { eq: $lang }) {
+      _previewable
       lang
       uid
       alternate_languages {
@@ -176,3 +175,4 @@ export const query = graphql`
     }
   }
 `
+export default Blog
