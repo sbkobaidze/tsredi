@@ -20,11 +20,11 @@ const LanguageSwitcher = ({ lang, altLang }) => {
   }
 
   return (
-    <i className="language-switcher ">
+    <i className="language-switcher  ">
       <select
         value={lang}
         onChange={handleLangChange}
-        className="dark:bg-black"
+        className="dark:bg-black bg-[#322C7A] sm:bg-stext"
       >
         {currentLangOption}
         {alternateLangOptions}

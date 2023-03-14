@@ -12,7 +12,7 @@ export const Hero = ({ slice }) => {
 
   return (
     <div
-      className="relative w-full h-[100vh] dark:bg-black  sm:h-[90vh]"
+      className="relative w-full h-[100vh] dark:bg-black  sm:h-[110vh]"
       id="hero"
     >
       <Canvas style={{ position: "absolute" }}>
@@ -34,10 +34,10 @@ export const Hero = ({ slice }) => {
 
       <div className=" h-full w-[80%] relative mx-auto inherit  z-10    ">
         <div className="text-white text-7xl top-[25%]  font-main font-semibold z-20 absolute left-0  sm:top-[10%] sm:text-6xl">
-          <h1 className="mb-3 text-7xl " id="canvas3d">
+          <h1 className="mb-3  sm:mb-0 text-7xl sm:text-5xl " id="canvas3d">
             {heroData.header.text}
           </h1>
-          <h1 className="effectedtext  my-2 text-7xl">
+          <h1 className="effectedtext  my-2 sm:my-0 text-7xl sm:text-5xl">
             {" "}
             {heroData.description.text}
             <span className="effectContainer">
@@ -88,7 +88,7 @@ export const Hero = ({ slice }) => {
             </Button>
           </div>
         </div>
-        <div className="h-[500px] w-[50%]  top-[10%]   right-0  absolute sm:translate-y-[250px] sm:w-[100%]  ">
+        <div className="h-[500px] w-[50%]  top-[10%] sm:top-[0]   right-0  absolute sm:translate-y-[250px] sm:w-[100%]  ">
           <Lottie
             animationData={Animation}
             style={{ height: "550px" }}

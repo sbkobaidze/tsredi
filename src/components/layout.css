@@ -473,3 +473,43 @@ body {
 #careers .title {
   color: white;
 }
+
+#testlogo {
+  --screen-size: 0px;
+}
+.testlogo {
+  transition: all;
+}
+
+.projectscard:before {
+  background: linear-gradient(90deg, #6e45e1, #89d4cf);
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  transition: background-position 350ms ease;
+}
+.projectscard:hover:before {
+  background-position: 100% 100%;
+  transform: scale(1.08, 1.08);
+}
+
+.card-content {
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 8%, transparent 8%);
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  position: absolute;
+  z-index: 10;
+  transition: background-position 350ms ease;
+}
+
+.projectscard:hover > .card-content {
+  background-position: -10% 0%;
+}

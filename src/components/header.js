@@ -16,7 +16,9 @@ const Header = ({ headerData, context }) => {
           onClick={e => scrollToDiv(item.link.text, e)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
         >
-          <li className="my-3">{item.header.text.toUpperCase()}</li>
+          <li className="my-3 hover:text-hovercolor">
+            {item.header.text.toUpperCase()}
+          </li>
         </Link>
       )
     } else {
@@ -27,7 +29,9 @@ const Header = ({ headerData, context }) => {
           onClick={e => scrollToDiv(item.link.text, e)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
         >
-          <li className=" sm:my-3">{item.header.text.toUpperCase()}</li>
+          <li className=" sm:my-1 hover:text-hovercolor">
+            {item.header.text.toUpperCase()}
+          </li>
         </Link>
       )
     }
@@ -107,7 +111,7 @@ const Header = ({ headerData, context }) => {
           <div className="  flex-row flex  items-center mt-1  ">
             <ul className="flex font-bold items-center sm:hidden ">
               {pageHeaders}
-              <li className="mx-3">
+              <li className="mx-3 ">
                 <LanguageSwitcher
                   lang={context.lang}
                   altLang={context.alternate_languages}
@@ -158,7 +162,7 @@ const Header = ({ headerData, context }) => {
                 </defs>
               </svg>
             </div>
-            <div className="mobile-menu  hidden  min-[640px]:hidden">
+            <div className="mobile-menu    hidden sm:block">
               <div
                 className="menu-btn__burger "
                 size="30"

@@ -31,10 +31,13 @@ export const Head = ({ data }) => (
     />
   </>
 )
+
 export default Homepage
+
 export const query = graphql`
   query ($lang: String) {
     prismicHomepage(lang: { eq: $lang }) {
+      _previewable
       alternate_languages {
         id
         type
@@ -72,6 +75,30 @@ export const query = graphql`
                 text
               }
             }
+          }
+          ... on PrismicHomepageDataBodyProjects {
+            id
+            items {
+              img {
+                url
+              }
+              link {
+                url
+              }
+              minidescription {
+                text
+              }
+              projectheader {
+                text
+              }
+            }
+            primary {
+              header {
+                text
+              }
+            }
+            slice_label
+            slice_type
           }
 
           ... on PrismicHomepageDataBodyCustomerLogos {

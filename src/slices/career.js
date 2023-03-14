@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { MdArrowUpward } from "react-icons/md"
 import CollapseGroup from "@geist-ui/core/esm/collapse/collapse-group"
 import Collapse from "@geist-ui/core/esm/collapse/collapse"
 
