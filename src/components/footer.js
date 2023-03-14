@@ -1,7 +1,7 @@
 import React from "react"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { GatsbyImage } from "gatsby-plugin-image"
-import {Link} from 'gatsby'
+import { Link } from "gatsby"
 
 const Footer = ({ footerData }) => {
   const footerHeaders = footerData.data.body[0].items.map(header => {
@@ -33,8 +33,10 @@ const Footer = ({ footerData }) => {
   const scrollToDiv = (path, e) => {
     if (path != "blog") {
       setTimeout(() => {
-        let scroll = document.getElementById(`${path}`).offsetTop
-        window.scrollTo({ top: scroll, behavior: "smooth" })
+        if (window != "undefined") {
+          let scroll = document.getElementById(`${path}`).offsetTop
+          window.scrollTo({ top: scroll, behavior: "smooth" })
+        }
       }, 100)
     }
   }

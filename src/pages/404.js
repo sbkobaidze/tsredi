@@ -10,7 +10,7 @@ const NotFoundPage = () => {
       <div className=" bg-[linear-gradient(135deg,#330867,#31a7bb)]">
         <div className=" w-full h-screen font-main font-semibold flex justify-center items-center dark:bg-black">
           <Link to="/">
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1500 1500"
               width="500"
@@ -1035,7 +1035,7 @@ const NotFoundPage = () => {
                   />
                 </svg>
               </g>
-            </svg>
+            </svg> */}
           </Link>
         </div>{" "}
       </div>

@@ -47,16 +47,18 @@ const Header = ({ headerData, context }) => {
   }
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark")
-      document.getElementById("overlay").classList.add("overlay-hide")
-      document.getElementById("circle").classList.add("white")
-      document.querySelector(".moon-circle").classList.add("real-moon")
-    } else {
-      document.documentElement.classList.remove("dark")
-      document.getElementById("overlay").classList.remove("overlay-hide")
-      document.getElementById("circle").classList.remove("white")
-      document.querySelector(".moon-circle").classList.remove("real-moon")
+    if (window != "undefined") {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark")
+        document.getElementById("overlay").classList.add("overlay-hide")
+        document.getElementById("circle").classList.add("white")
+        document.querySelector(".moon-circle").classList.add("real-moon")
+      } else {
+        document.documentElement.classList.remove("dark")
+        document.getElementById("overlay").classList.remove("overlay-hide")
+        document.getElementById("circle").classList.remove("white")
+        document.querySelector(".moon-circle").classList.remove("real-moon")
+      }
     }
   }, [theme])
 
@@ -72,12 +74,14 @@ const Header = ({ headerData, context }) => {
   const [x, xShow] = useState(false)
 
   const makeX = () => {
-    if (x === false) {
-      document.querySelector(".menu-btn__burger").classList.add("open")
-      xShow(true)
-    } else {
-      document.querySelector(".menu-btn__burger").classList.remove("open")
-      xShow(false)
+    if (window != "undefined") {
+      if (x === false) {
+        document.querySelector(".menu-btn__burger").classList.add("open")
+        xShow(true)
+      } else {
+        document.querySelector(".menu-btn__burger").classList.remove("open")
+        xShow(false)
+      }
     }
   }
 
