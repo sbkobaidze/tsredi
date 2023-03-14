@@ -76,30 +76,6 @@ export const query = graphql`
               }
             }
           }
-          ... on PrismicHomepageDataBodyProjects {
-            id
-            items {
-              img {
-                url
-              }
-              link {
-                url
-              }
-              minidescription {
-                text
-              }
-              projectheader {
-                text
-              }
-            }
-            primary {
-              header {
-                text
-              }
-            }
-            slice_label
-            slice_type
-          }
 
           ... on PrismicHomepageDataBodyCustomerLogos {
             id
@@ -304,3 +280,27 @@ export const query = graphql`
     }
   }
 `
+// ... on PrismicHomepageDataBodyProjects {
+//   id
+//   items {
+//     img {
+//       url
+//     }
+//     link {
+//       url
+//     }
+//     minidescription {
+//       text
+//     }
+//     projectheader {
+//       text
+//     }
+//   }
+//   primary {
+//     header {
+//       text
+//     }
+//   }
+//   slice_label
+//   slice_type
+// }

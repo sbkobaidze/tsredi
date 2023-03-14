@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import CollapseGroup from "@geist-ui/core/esm/collapse/collapse-group"
 import Collapse from "@geist-ui/core/esm/collapse/collapse"
 
