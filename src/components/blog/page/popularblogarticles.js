@@ -4,7 +4,7 @@ import BlogCard from "../blogcard"
 const PopularBlogArticles = ({ everyBlog, currentBlog }) => {
   const currentArticles = []
   everyBlog.forEach(item => {
-    if (item.uid != currentBlog) {
+    if (item.uid !== currentBlog) {
       currentArticles.push(item)
     }
   })

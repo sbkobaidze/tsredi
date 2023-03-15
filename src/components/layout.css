@@ -389,9 +389,19 @@ html {
   font-size: 50px;
   line-height: 1.5;
 }
+.post-1 h2 {
+  font-size: 50px;
+  line-height: 1.5;
+}
+
 .post-1 p {
   margin: 25px 0;
   line-height: 1.5;
+}
+
+.post-1 a {
+  color: blue;
+  text-decoration: underline;
 }
 
 .testich * {

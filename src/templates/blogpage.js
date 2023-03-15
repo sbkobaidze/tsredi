@@ -1,66 +1,68 @@
 import { graphql } from "gatsby"
 import React from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import Copyright from "../components/copyright"
+import Layout from "../components/layout"
 import Articles from "../components/blog/page/articles"
 import BlogStory from "../components/blog/page/blogstory"
 import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
 
 const Blogpage = ({ data }) => {
-  const document = data.prismicBlog || {}
+  let document = data.prismicBlog || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
   const newsletter = data.prismicBlogmain.data.body[0].primary || {}
   const allBlogs = data.allPrismicBlog.nodes || {}
 
-  console.log(allBlogs)
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Header headerData={navbar} context={document} />
-      <Articles
-        title={document.data.blogtitle.text}
-        image={document.data.blogimage}
-      />
-      <BlogStory
-        paragraph={document.data.text.html}
-        author={document.data.author.text}
-        authorImage={document.data.authorpic}
-        authorSocialMedia={document.data.authorsocialmedia}
-        date={document.data.date}
-        newsletter={newsletter}
-      />
-      <PopularBlogArticles
-        everyBlog={allBlogs}
-        currentBlog={document.uid}
-        lang={document.lang}
-      />
-      <Footer footerData={footer} />
-      <Copyright />
+      <Layout footerData={footer} context={document} headerData={navbar}>
+        <Articles
+          title={document.data.blogtitle.text}
+          image={document.data.blogimage}
+        />
+
+        <BlogStory
+          paragraph={document.data.text.html}
+          author={document.data.author.text}
+          authorImage={document.data.authorpic}
+          authorSocialMedia={document.data.authorsocialmedia}
+          date={document.data.date}
+          newsletter={newsletter}
+        />
+        <PopularBlogArticles
+          everyBlog={allBlogs}
+          currentBlog={document.uid}
+          lang={document.lang}
+        />
+      </Layout>
     </div>
   )
 }
 
-export const Head = ({ data }) => (
-  <Seo
-    title={data.prismicBlog.data.blogtitle.text}
-    description={data.prismicBlogmain.data.metadescription.text}
-  />
-)
+export const Head = ({ data }) => {
+  return (
+    <Seo
+      title={data.prismicBlog.data.blogtitle.text}
+      description={data.prismicBlog.data.metadescription.text}
+    />
+  )
+}
+
+export default Blogpage
 
 export const query = graphql`
   query ($lang: String) {
     prismicBlog(lang: { eq: $lang }) {
-      _previewable
-      id
-      lang
       alternate_languages {
         lang
         id
         type
         uid
       }
+      id
+      lang
+      url
+
       uid
       data {
         author {
@@ -205,4 +207,3 @@ export const query = graphql`
     }
   }
 `
-export default Blogpage

@@ -2,13 +2,15 @@ import React from "react"
 
 const Articles = ({ title, image }) => {
   const blogTitle = (
-    <h1 className="text-5xl font-semibold text-white pt-20">{title}</h1>
+    <h1 className="text-5xl font-semibold text-white pt-20 leading-12">
+      {title}
+    </h1>
   )
 
   const blogImage = <img src={image.url} alt={image.alt}></img>
 
   return (
-    <div className="w-full h-[70vh] max-[640px]:h-[70vh] dark:bg-black relative ">
+    <div className="w-full h-[70vh] lg:h-[auto] dark:bg-black relative ">
       <div class="custom-shape-divider-bottom-1677244345 ">
         <svg
           data-name="Layer 1"
@@ -32,9 +34,9 @@ const Articles = ({ title, image }) => {
           ></path>
         </svg>
       </div>
-      <div className=" flex  w-[80%] h-full font-main m-auto max-[900px]:flex-col  ">
-        <div className="w-[50%] max-[900px]:w-[100%]">{blogTitle}</div>
-        <div className="w-[50%] max-[900px]:w-[100%] z-20">{blogImage}</div>
+      <div className=" flex  w-[80%] h-full font-main m-auto lg:flex-col  ">
+        <div className="w-[50%] lg:w-[100%]">{blogTitle}</div>
+        <div className="w-[50%] lg:w-[100%] z-20">{blogImage}</div>
       </div>
     </div>
   )

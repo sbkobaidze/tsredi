@@ -17,6 +17,7 @@ const LanguageSwitcher = ({ lang, altLang }) => {
 
   const handleLangChange = e => {
     navigate(e.target.value)
+    console.log(e)
   }
 
   return (

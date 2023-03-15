@@ -46,14 +46,16 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
           {currentLangBlogs.slice(0, 3).map(blog => {
             console.log(blog.date)
             return (
-              <BlogCard
-                key={blog.id}
-                title={blog.data.blogtitle.text}
-                date={blog.data.date}
-                uid={blog.uid}
-                image={blog.data.blogimage.url}
-                lang={currentLang}
-              />
+              <div className="w-[400px]">
+                <BlogCard
+                  key={blog.id}
+                  title={blog.data.blogtitle.text}
+                  date={blog.data.date}
+                  uid={blog.uid}
+                  image={blog.data.blogimage.url}
+                  lang={currentLang}
+                />
+              </div>
             )
           })}
         </div>
