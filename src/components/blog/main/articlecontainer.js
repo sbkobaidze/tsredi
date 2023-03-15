@@ -44,7 +44,6 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
         <h1 className="font-semibold text-4xl p-4">{pageHeader}</h1>
         <div className="card container  flex justify-center flex-wrap ">
           {currentLangBlogs.slice(0, 3).map(blog => {
-            console.log(blog.date)
             return (
               <div className="w-[400px]">
                 <BlogCard

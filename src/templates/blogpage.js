@@ -7,7 +7,7 @@ import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
 
 const Blogpage = ({ data }) => {
-  let document = data.prismicBlog || {}
+  const dc = data.prismicBlog || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
   const newsletter = data.prismicBlogmain.data.body[0].primary || {}
@@ -15,24 +15,21 @@ const Blogpage = ({ data }) => {
 
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Layout footerData={footer} context={document} headerData={navbar}>
-        <Articles
-          title={document.data.blogtitle.text}
-          image={document.data.blogimage}
-        />
+      <Layout footerData={footer} context={dc} headerData={navbar}>
+        <Articles title={dc.data.blogtitle.text} image={dc.data.blogimage} />
 
         <BlogStory
-          paragraph={document.data.text.html}
-          author={document.data.author.text}
-          authorImage={document.data.authorpic}
-          authorSocialMedia={document.data.authorsocialmedia}
-          date={document.data.date}
+          paragraph={dc.data.text.html}
+          author={dc.data.author.text}
+          authorImage={dc.data.authorpic}
+          authorSocialMedia={dc.data.authorsocialmedia}
+          date={dc.data.date}
           newsletter={newsletter}
         />
         <PopularBlogArticles
           everyBlog={allBlogs}
-          currentBlog={document.uid}
-          lang={document.lang}
+          currentBlog={dc.uid}
+          lang={dc.lang}
         />
       </Layout>
     </div>

@@ -38,11 +38,13 @@ const Header = ({ headerData, context }) => {
   })
 
   const scrollToDiv = (path, e) => {
-    if (path != "blog") {
-      setTimeout(() => {
-        let scroll = document.getElementById(`${path}`).offsetTop
-        window.scrollTo({ top: scroll, behavior: "smooth" })
-      }, 100)
+    if (window != "undefined") {
+      if (path != "blog") {
+        setTimeout(() => {
+          let scroll = document.getElementById(`${path}`).offsetTop
+          window.scrollTo({ top: scroll, behavior: "smooth" })
+        }, 100)
+      }
     }
   }
 
