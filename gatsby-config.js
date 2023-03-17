@@ -20,6 +20,9 @@ module.exports = {
     siteUrl: `https://tsredi.com/`,
     author: "Saba Kobaidze",
   },
+  flags: {
+    DEV_SSR: true,
+  },
 
   plugins: [
     `gatsby-plugin-image`,

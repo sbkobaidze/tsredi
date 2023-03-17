@@ -38,8 +38,8 @@ const Header = ({ headerData, context }) => {
   })
 
   const scrollToDiv = (path, e) => {
-    if (window != "undefined") {
-      if (path != "blog") {
+    if (window !== "undefined") {
+      if (path !== "blog") {
         setTimeout(() => {
           let scroll = document.getElementById(`${path}`).offsetTop
           window.scrollTo({ top: scroll, behavior: "smooth" })
@@ -76,7 +76,7 @@ const Header = ({ headerData, context }) => {
   const [x, xShow] = useState(false)
 
   const makeX = () => {
-    if (window != "undefined") {
+    if (window !== "undefined") {
       if (x === false) {
         document.querySelector(".menu-btn__burger").classList.add("open")
         xShow(true)
