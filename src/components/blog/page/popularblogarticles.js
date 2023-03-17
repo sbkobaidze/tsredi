@@ -1,17 +1,16 @@
-import React, { useEffect } from "react"
+import React from "react"
 import BlogCard from "../blogcard"
 
 const PopularBlogArticles = ({ everyBlog, currentBlog }) => {
   const currentArticles = []
 
-  useEffect(() => {
-    everyBlog.forEach(item => {
-      if (item.uid !== currentBlog) {
-        currentArticles.push(item)
-      }
-    })
+  everyBlog.forEach(item => {
+    if (item.uid !== currentBlog) {
+      currentArticles.push(item)
+    }
   })
-  const displayArticles = currentArticles.slice(0, 5)
+
+  const recentArticles = currentArticles.slice(0, 5)
 
   return (
     <div className="w-full h-[auto] font-main relative dark:bg-black ">
@@ -45,7 +44,7 @@ const PopularBlogArticles = ({ everyBlog, currentBlog }) => {
           </h1>
         </div>
         <div className="cards flex max-[900px]:flex-col ">
-          {displayArticles.map(blog => {
+          {recentArticles.map(blog => {
             return (
               <BlogCard
                 key={blog.data.uid}

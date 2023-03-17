@@ -48,8 +48,8 @@ export const Head = ({ data }) => {
 export default Blogpage
 
 export const query = graphql`
-  query ($lang: String) {
-    prismicBlog(lang: { eq: $lang }) {
+  query ($lang: String, $id: String, $uid: String) {
+    prismicBlog(lang: { eq: $lang }, id: { eq: $id }) {
       alternate_languages {
         lang
         id
@@ -91,7 +91,7 @@ export const query = graphql`
 
     allPrismicBlog(
       sort: { data: { date: DESC } }
-      filter: { lang: { eq: $lang } }
+      filter: { lang: { eq: $lang }, uid: { ne: $uid } }
     ) {
       nodes {
         id
