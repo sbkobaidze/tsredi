@@ -43,17 +43,19 @@ const PopularBlogArticles = ({ everyBlog, currentBlog }) => {
             POPULAR ARTICLES
           </h1>
         </div>
-        <div className="cards flex max-[900px]:flex-col ">
+        <div className="cards flex lg:flex-col ">
           {recentArticles.map(blog => {
             return (
-              <BlogCard
-                key={blog.data.uid}
-                title={blog.data.blogtitle.text}
-                date={blog.data.date}
-                uid={blog.uid}
-                image={blog.data.blogimage.url}
-                lang={blog.lang}
-              />
+              <div className="max-w-[300px]">
+                <BlogCard
+                  key={blog.data.uid}
+                  title={blog.data.blogtitle.text}
+                  date={blog.data.date}
+                  uid={blog.uid}
+                  image={blog.data.blogimage.url}
+                  lang={blog.lang}
+                />
+              </div>
             )
           })}
         </div>

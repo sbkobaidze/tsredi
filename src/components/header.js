@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { scrollToDiv } from "../utils/divScroller"
 
 const Header = ({ headerData, context }) => {
+  console.log(context)
   const [theme, changeTheme] = useState("dark")
   const [mobilenav, changeNav] = useState("wop")
 
@@ -12,7 +13,7 @@ const Header = ({ headerData, context }) => {
     if (item.link.text === "blog") {
       return (
         <Link
-          to={`/${item.link.text.toLowerCase()}`}
+          to={`${item.link.text.toLowerCase()}`}
           key={index}
           onClick={e => scrollToDiv(item.link.text)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
@@ -25,7 +26,7 @@ const Header = ({ headerData, context }) => {
     } else {
       return (
         <Link
-          to={`/#${item.link.text.toLowerCase()}`}
+          to={`#${item.link.text.toLowerCase()}`}
           key={index}
           onClick={e => scrollToDiv(item.link.text)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
