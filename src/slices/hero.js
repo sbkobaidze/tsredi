@@ -4,6 +4,7 @@ import Animation from "../components/Animations/aboutAnimation.json"
 import Lottie from "lottie-react"
 import { Canvas } from "@react-three/fiber"
 import Starbackground from "../components/Animations/Starbackground"
+import { scrollToDiv } from "../utils/divScroller"
 
 export const Hero = ({ slice }) => {
   const heroData = slice.primary
@@ -12,7 +13,7 @@ export const Hero = ({ slice }) => {
 
   return (
     <div
-      className="relative w-full h-[100vh] dark:bg-black  sm:h-[110vh]"
+      className="relative w-full h-[100vh] dark:bg-black  sm:h-[90vh]"
       id="hero"
     >
       <Canvas style={{ position: "absolute" }}>
@@ -33,12 +34,11 @@ export const Hero = ({ slice }) => {
       </div>
 
       <div className=" h-full w-[80%] relative mx-auto inherit  z-10    ">
-        <div className="text-white text-7xl top-[25%]  font-main font-semibold z-20 absolute left-0  sm:top-[10%] sm:text-6xl">
+        <div className="text-white text-7xl top-[25%]  font-main font-semibold z-20 absolute left-0 sm:left-10 sm:top-[10%] sm:text-6xl">
           <h1 className="mb-3  sm:mb-0 text-7xl sm:text-5xl " id="canvas3d">
             {heroData.header.text}
           </h1>
           <h1 className="effectedtext  my-2 sm:my-0 text-7xl sm:text-5xl">
-            {" "}
             {heroData.description.text}
             <span className="effectContainer">
               <span className="effectStar">
@@ -83,6 +83,7 @@ export const Hero = ({ slice }) => {
             <Button
               sx={{ color: "white", fontWeight: "bold" }}
               className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]  my-2 font-main  w-60 h-16 border-3"
+              onClick={e => scrollToDiv("contact")}
             >
               {heroData.button.text}
             </Button>

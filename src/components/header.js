@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import LanguageSwitcher from "./languageswitcher"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { scrollToDiv } from "../utils/divScroller"
 
 const Header = ({ headerData, context }) => {
   const [theme, changeTheme] = useState("dark")
@@ -13,7 +14,7 @@ const Header = ({ headerData, context }) => {
         <Link
           to={`/${item.link.text.toLowerCase()}`}
           key={index}
-          onClick={e => scrollToDiv(item.link.text, e)}
+          onClick={e => scrollToDiv(item.link.text)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
         >
           <li className="my-3 hover:text-hovercolor">
@@ -26,7 +27,7 @@ const Header = ({ headerData, context }) => {
         <Link
           to={`/#${item.link.text.toLowerCase()}`}
           key={index}
-          onClick={e => scrollToDiv(item.link.text, e)}
+          onClick={e => scrollToDiv(item.link.text)}
           style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
         >
           <li className=" sm:my-1 hover:text-hovercolor">
@@ -37,19 +38,8 @@ const Header = ({ headerData, context }) => {
     }
   })
 
-  const scrollToDiv = (path, e) => {
-    if (window !== "undefined") {
-      if (path !== "blog") {
-        setTimeout(() => {
-          let scroll = document.getElementById(`${path}`).offsetTop
-          window.scrollTo({ top: scroll, behavior: "smooth" })
-        }, 100)
-      }
-    }
-  }
-
   useEffect(() => {
-    if (window != "undefined") {
+    if (window !== "undefined") {
       if (theme === "dark") {
         document.documentElement.classList.add("dark")
         document.getElementById("overlay").classList.add("overlay-hide")

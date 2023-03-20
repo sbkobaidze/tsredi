@@ -39,6 +39,7 @@ module.exports = {
     },
 
     `gatsby-transformer-sharp`,
+    `@gatsby-cloud-pkg/gatsby-plugin-preview`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

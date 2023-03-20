@@ -1,72 +1,71 @@
-import React, { useEffect } from "react"
-import { useRef } from "react"
+import React from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { useState, forwardRef } from "react"
+import { useState } from "react"
 import { Canvas } from "@react-three/fiber"
 import Starbackground from "../components/Animations/Starbackground"
-import emailjs from "@emailjs/browser"
+import { sendEmail } from "../utils/emailjs"
 
-export const Contact = ({ slice, context }) => {
-  const form = useRef()
-
-  const sendEmail = e => {
-    e.preventDefault()
-
-    emailjs
-      .sendForm(
-        process.env.ACCOUNT_KEY,
-        process.env.TEMPLATE_KEY,
-        form?.current,
-        process.env.EMAILJS_API_KEY
-      )
-      .then(
-        result => {
-          console.log(result.text)
-        },
-        error => {
-          console.log(error.text)
-        }
-      )
-  }
-
+export const Contact = ({ slice }) => {
   const notify = e => toast(e)
 
-  function checkForm() {
+  const [loaded, isLoading] = useState(false)
+  const [inputs, updateInputs] = useState("")
+
+  function checkForm(e) {
+    e.preventDefault()
     if (window != "undefined") {
-      if (
-        document.getElementById("inputName").value &&
-        document.getElementById("inputEmail").value &&
-        document.getElementById("subject").value &&
-        document.getElementById("text").value
-      ) {
+      isLoading(true)
+      if (inputs.name && inputs.email && inputs.subject && inputs.message) {
         notify("Email Sent!")
+        sendEmail(e)
       } else {
         notify("Fill Out The Form!")
       }
     }
   }
 
-  const [loaded, isLoading] = useState(false)
-  useEffect(() => {
-    isLoading(true)
-  })
+  function formUpdate(e) {
+    const { name, value } = e.target
+
+    updateInputs(prevInputs => ({
+      ...prevInputs,
+      [name]: value,
+    }))
+    console.log(inputs)
+  }
 
   const contactInputs = slice.items.map(inputData => {
-    return (
-      <input
-        className=" rounded-md h-10 max-[900px]:m-2  m-3 p-2"
-        type={inputData.type.text}
-        placeholder={inputData.placeholder.text}
-        id={inputData.placeholder.text}
-        required
-      />
-    )
+    if (inputData.placeholder.text.toLowerCase() === "message") {
+      return (
+        <textarea
+          className=" rounded-md h-20 max-[900px]:h-20 m-3 max-[900px]:m-2 p-2"
+          placeholder={inputData.placeholder.text}
+          required
+          id={inputData.name.text.toLowerCase()}
+          name={inputData.name.text.toLowerCase()}
+          onChange={e => formUpdate(e)}
+        ></textarea>
+      )
+    } else {
+      return (
+        <input
+          key={inputData.name.text}
+          className=" rounded-md h-10 max-[900px]:m-2  m-3 p-2"
+          type={inputData.type.text}
+          placeholder={inputData.placeholder.text}
+          id={inputData.name.text.toLowerCase()}
+          name={inputData.name.text.toLowerCase()}
+          onChange={e => formUpdate(e)}
+          required
+        />
+      )
+    }
   })
 
   return (
     <div
-      className="spacer layer2 h-[100vh]  max-[900px]:h-[70vh] relative  dark:bg-black w-full "
+      className="spacer layer2 h-[90vh]  max-[900px]:h-[70vh] relative  dark:bg-black w-full "
       id="contact"
     >
       <Canvas className="absolute ">
@@ -102,22 +101,15 @@ export const Contact = ({ slice, context }) => {
           </h1>
           <form
             className="flex flex-col px-10 max-[640px]:text-sm"
-            ref={form}
-            onSubmit={sendEmail}
+            id="form"
+            onSubmit={e => checkForm(e)}
           >
             {contactInputs}
 
-            <textarea
-              className=" rounded-md h-20 max-[900px]:h-20 m-3 max-[900px]:m-2 p-2"
-              placeholder="Message"
-              required
-              id={slice.primary.textarea.text}
-            ></textarea>
             <input
               type="submit"
               value={slice.primary.button.text}
               className="text-white bg-[linear-gradient(135deg,#FFDD00,#Fbb034)] rounded-md h-10 m-3 text-center font-main font-semibold cursor-pointer resize-none	"
-              onClick={() => checkForm()}
             ></input>
           </form>
         </div>

@@ -523,3 +523,8 @@ body {
 .projectscard:hover > .card-content {
   background-position: -10% 0%;
 }
+
+html,
+body {
+  overflow-y: scroll;
+}

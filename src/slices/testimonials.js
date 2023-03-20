@@ -7,23 +7,19 @@ export const Testimonials = ({ slice }) => {
   const testimonialCards = slice.items.map(testimonial => {
     return (
       <div
-        className="card bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl  box-shadow-black w-[49%] sm:w-[100%]  sm:h-[48%] h-[100%] flex flex-col p-4 my-4"
+        className="card bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl  box-shadow-black w-[49%] sm:w-[100%]  sm:h-[48%] min-h-[100%] flex flex-col p-4 my-4 relative"
         id="testimonials"
       >
         <div className="quotes">
           <MdFormatQuote size={80} style={{ color: "white" }} />
         </div>
-        <div className="text">
+        <div className="text min-h-[40%]">
           <p className="font-normal text-white text-normal">
             {testimonial.testimonial.text}
           </p>
         </div>
         <div className="testimonial-author pt-3">
-          <User
-            src={testimonial.img.url}
-            name={testimonial.name.text}
-            className="testich"
-          >
+          <User name={testimonial.name.text} className="testich">
             <UserLink href={testimonial.brandlink.url}>
               {"@" + testimonial.brand.text}
             </UserLink>

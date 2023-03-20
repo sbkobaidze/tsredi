@@ -2,6 +2,7 @@ import React from "react"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import { scrollToDiv } from "../utils/divScroller"
 
 const Footer = ({ footerData }) => {
   const footerHeaders = footerData.data.body[0].items.map(header => {
@@ -30,17 +31,6 @@ const Footer = ({ footerData }) => {
     }
   })
 
-  const scrollToDiv = (path, e) => {
-    if (path != "blog") {
-      setTimeout(() => {
-        if (window != "undefined") {
-          let scroll = document.getElementById(`${path}`).offsetTop
-          window.scrollTo({ top: scroll, behavior: "smooth" })
-        }
-      }, 100)
-    }
-  }
-
   return (
     <div className="w-full   p-10 dark:bg-black ">
       <div>
@@ -62,6 +52,7 @@ const Footer = ({ footerData }) => {
                 <a
                   href={footerData.data.body[0].primary.facebook.url}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {" "}
                   <FaFacebook
@@ -72,6 +63,7 @@ const Footer = ({ footerData }) => {
                 <a
                   href={footerData.data.body[0].primary.linkedin.url}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {" "}
                   <FaLinkedin
@@ -79,13 +71,21 @@ const Footer = ({ footerData }) => {
                     size={20}
                   />
                 </a>
-                <a href={footerData.data.body[0].primary.instagram.url}>
+                <a
+                  href={footerData.data.body[0].primary.instagram.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaInstagram
                     className="mr-1 hover:text-hovercolor"
                     size={20}
                   />
                 </a>
-                <a href={footerData.data.body[0].primary.twitter.url}>
+                <a
+                  href={footerData.data.body[0].primary.twitter.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaTwitter className="mr-1 hover:text-hovercolor" size={20} />
                 </a>
               </div>

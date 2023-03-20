@@ -147,15 +147,15 @@ export const query = graphql`
               type {
                 text
               }
+              name {
+                text
+              }
             }
             primary {
               contactheader {
                 text
               }
               button {
-                text
-              }
-              textarea {
                 text
               }
             }
