@@ -37,7 +37,6 @@ export default Homepage
 export const query = graphql`
   query ($lang: String) {
     prismicHomepage(lang: { eq: $lang }) {
-      _previewable
       alternate_languages {
         id
         type

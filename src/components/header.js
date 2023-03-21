@@ -3,39 +3,85 @@ import { Link } from "gatsby"
 import LanguageSwitcher from "./languageswitcher"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { scrollToDiv } from "../utils/divScroller"
+import { defaultLanguage } from "../../prismic-config"
 
 const Header = ({ headerData, context }) => {
-  console.log(context)
   const [theme, changeTheme] = useState("dark")
   const [mobilenav, changeNav] = useState("wop")
 
   const pageHeaders = headerData.body[0].items.map((item, index) => {
     if (item.link.text === "blog") {
-      return (
-        <Link
-          to={`${item.link.text.toLowerCase()}`}
-          key={index}
-          onClick={e => scrollToDiv(item.link.text)}
-          style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
-        >
-          <li className="my-3 hover:text-hovercolor">
-            {item.header.text.toUpperCase()}
-          </li>
-        </Link>
-      )
+      if (defaultLanguage === context.lang) {
+        return (
+          <Link
+            to={`/${item.link.text.toLowerCase()}`}
+            key={index}
+            onClick={e => scrollToDiv(item.link.text)}
+            style={{
+              margin: "0 5px",
+              fontFamily: "Kanit",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <li className="my-3 hover:text-hovercolor">
+              {item.header.text.toUpperCase()}
+            </li>
+          </Link>
+        )
+      } else {
+        return (
+          <Link
+            to={`/ka/${item.link.text.toLowerCase()}`}
+            key={index}
+            onClick={e => scrollToDiv(item.link.text)}
+            style={{
+              margin: "0 5px",
+              fontFamily: "Kanit",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <li className="my-3 hover:text-hovercolor">
+              {item.header.text.toUpperCase()}
+            </li>
+          </Link>
+        )
+      }
     } else {
-      return (
-        <Link
-          to={`#${item.link.text.toLowerCase()}`}
-          key={index}
-          onClick={e => scrollToDiv(item.link.text)}
-          style={{ margin: "0 5px", fontFamily: "Kanit", whiteSpace: "nowrap" }}
-        >
-          <li className=" sm:my-1 hover:text-hovercolor">
-            {item.header.text.toUpperCase()}
-          </li>
-        </Link>
-      )
+      if (defaultLanguage === context.lang) {
+        return (
+          <Link
+            to={`/#${item.link.text.toLowerCase()}`}
+            key={index}
+            onClick={e => scrollToDiv(item.link.text)}
+            style={{
+              margin: "0 5px",
+              fontFamily: "Kanit",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <li className=" sm:my-1 hover:text-hovercolor">
+              {item.header.text.toUpperCase()}
+            </li>
+          </Link>
+        )
+      } else {
+        return (
+          <Link
+            to={`/ka/#${item.link.text.toLowerCase()}`}
+            key={index}
+            onClick={e => scrollToDiv(item.link.text)}
+            style={{
+              margin: "0 5px",
+              fontFamily: "Kanit",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <li className=" sm:my-1 hover:text-hovercolor">
+              {item.header.text.toUpperCase()}
+            </li>
+          </Link>
+        )
+      }
     }
   })
 

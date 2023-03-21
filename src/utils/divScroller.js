@@ -1,5 +1,5 @@
 export const scrollToDiv = path => {
-  if (path != "blog") {
+  if (path !== "blog") {
     setTimeout(() => {
       if (window !== "undefined") {
         let scroll = document.getElementById(`${path}`).offsetTop

@@ -25,7 +25,7 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
       }
     }
     checkBtn()
-  }, [])
+  }, [currentLangBlogs])
 
   //load more blogs
   const showMore = () => {

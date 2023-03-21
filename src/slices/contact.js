@@ -14,7 +14,7 @@ export const Contact = ({ slice }) => {
 
   function checkForm(e) {
     e.preventDefault()
-    if (window != "undefined") {
+    if (window !== "undefined") {
       isLoading(true)
       if (inputs.name && inputs.email && inputs.subject && inputs.message) {
         notify("Email Sent!")

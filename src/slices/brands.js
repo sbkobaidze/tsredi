@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from "react"
+import React, { useRef } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export const Brands = ({ slice }) => {
-  const ref = useRef()
   const brandLogos = slice.items.map(item => {
     return (
       <div className="w-[200px] mx-4 cursor-pointer">
-        <a href={item.link.url} target="_blank">
+        <a href={item.link.url} target="_blank" rel="noreferrer">
           <GatsbyImage
             image={item.logo.gatsbyImageData}
             alt={item.logo.alt}
