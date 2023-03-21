@@ -6,7 +6,6 @@ import { SliceZone } from "@prismicio/react"
 import { PrismicProvider } from "@prismicio/react"
 import { components } from "../slices/index"
 import Layout from "../components/layout"
-
 const Homepage = ({ data }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}
@@ -159,6 +158,34 @@ export const query = graphql`
               }
             }
           }
+          ... on PrismicHomepageDataBodyProjects {
+            id
+            items {
+              link {
+                url
+              }
+              minidescription {
+                text
+              }
+              modaldescription {
+                text
+              }
+              projectheader {
+                text
+              }
+            }
+            primary {
+              header {
+                text
+              }
+
+              button {
+                text
+              }
+            }
+            slice_label
+            slice_type
+          }
           ... on PrismicHomepageDataBodyCareer {
             id
             items {
@@ -279,27 +306,3 @@ export const query = graphql`
     }
   }
 `
-// ... on PrismicHomepageDataBodyProjects {
-//   id
-//   items {
-//     img {
-//       url
-//     }
-//     link {
-//       url
-//     }
-//     minidescription {
-//       text
-//     }
-//     projectheader {
-//       text
-//     }
-//   }
-//   primary {
-//     header {
-//       text
-//     }
-//   }
-//   slice_label
-//   slice_type
-// }

@@ -96,15 +96,6 @@ svg {
   pointer-events: none;
   border: none;
 }
-/*
-.spacer {
-  background-image: url("../images/realone.svg");
-  height: 300px;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-}
-*/
 
 #visual {
   width: 100vw;
@@ -139,17 +130,6 @@ svg {
 html {
   scroll-behavior: smooth;
 }
-/* 
-.test {
-  width: 500px;
-  position: absolute;
-  left: 200px;
-  height: 300px;
-  background-color: blue;
-  border-radius: 45% 42% 30% 60% / 50% 55% 43% 44%;
-  animation: testnimation 10s infinite alternate;
-}
-*/
 
 .test-swiper .swiper {
   height: 170px;
@@ -223,150 +203,6 @@ html {
   margin-left: 23px;
 }
 
-.custom-shape-divider-bottom-1676905600 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1676905600 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 90px;
-  transform: rotateY(180deg);
-}
-
-.custom-shape-divider-bottom-1676905600 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-bottom-1677145451 {
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1677145451 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
-
-.custom-shape-divider-bottom-1677145451 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-top-1677155320 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1677155320 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 73px;
-}
-
-.custom-shape-divider-top-1677155320 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-top-1677243917 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1677243917 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 113px;
-}
-
-.custom-shape-divider-top-1677243917 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-bottom-1677244345 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1677244345 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 113px;
-}
-
-.custom-shape-divider-bottom-1677244345 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-top-1677246746 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1677246746 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 113px;
-}
-
-.custom-shape-divider-top-1677246746 .shape-fill {
-  fill: #d9d9d9;
-}
-
-.custom-shape-divider-top-1677344202 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1677344202 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
-
-.custom-shape-divider-top-1677344202 .shape-fill {
-  fill: #d3d3d3;
-}
 #career .title.jsx-3385074358 h3.jsx-3385074358 {
   color: white;
 }

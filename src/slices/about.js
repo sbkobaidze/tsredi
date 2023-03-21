@@ -5,7 +5,7 @@ import Animation from "../components/Animations/about-us.json"
 export const About = ({ slice }) => {
   return (
     <div
-      className=" h-[auto]   bg-secondary relative flex items-center"
+      className=" h-[auto] pb-20   bg-secondary relative flex items-center"
       id="about"
     >
       <div className=" w-[80%]  m-[auto] bg-[linear-gradient(90deg,#6E45E1,#89D4CF)]  h-[auto] flex lg:flex-col  lg:h-[80%] rounded-2xl  ">
