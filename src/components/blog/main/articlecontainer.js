@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useMemo } from "react"
 import { Button } from "@geist-ui/core"
 
 import BlogCard from "../blogcard"
@@ -9,7 +9,6 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
   const [blogShow, showMoreBlogs] = useState(3)
 
   const currentLangBlogs = []
-
   blogData.forEach(blog => {
     if (blog.lang === currentLang) {
       currentLangBlogs.push(blog)
@@ -25,7 +24,9 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
       }
     }
     checkBtn()
-  }, [currentLangBlogs])
+  }, [blogData])
+
+  useEffect(() => {})
 
   //load more blogs
   const showMore = () => {

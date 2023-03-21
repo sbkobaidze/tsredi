@@ -7,8 +7,6 @@ import { MdOpenInNew } from "react-icons/md"
 export const Projects = ({ slice }) => {
   const [width, changeWidth] = useState()
 
-  console.log(slice)
-
   const { visilbe, setVisible, bindings } = useModal()
 
   useEffect(() => {
@@ -29,13 +27,13 @@ export const Projects = ({ slice }) => {
             {card.minidescription.text}
           </div>
           <div className="absolute top-0 right-0">
-            <Link
+            <a
               to={card.link.url}
               target="_blank"
               className="underline text-xl hover:text-[#cbccc6] "
             >
               <MdOpenInNew size={30} />
-            </Link>
+            </a>
           </div>
           <div className="readmore absolute bottom-5 flex flex-col">
             <a
