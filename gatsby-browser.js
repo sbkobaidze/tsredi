@@ -15,6 +15,7 @@ import {
 import { linkResolver } from "./src/utils/linkResolver"
 
 import Homepage from "./src/templates/homepage"
+import Blogpage from "./src/templates/blogpage"
 
 export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider
@@ -24,6 +25,7 @@ export const wrapRootElement = ({ element }) => (
         linkResolver,
         componentResolver: componentResolverFromMap({
           Homepage: Homepage,
+          Blog: Blogpage,
         }),
       },
     ]}

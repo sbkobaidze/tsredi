@@ -71,6 +71,8 @@ module.exports = {
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         accessToken: process.env.PRISMIC_PREVIEWS,
+        linkResolver: require("./src/utils/linkResolver").linkResolver,
+        releaseId: process.env.PRISMIC_RELEASE_ID,
       },
     },
     {
