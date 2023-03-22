@@ -5,7 +5,10 @@ import Articles from "../components/blog/page/articles"
 import BlogStory from "../components/blog/page/blogstory"
 import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
-import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
+import {
+  withPrismicPreview,
+  withPrismicUnpublishedPreview,
+} from "gatsby-plugin-prismic-previews"
 
 const Blogpage = ({ data }) => {
   const dc = data.prismicBlog || {}
@@ -46,7 +49,7 @@ export const Head = ({ data }) => {
   )
 }
 
-export default withPrismicPreview(Blogpage)
+export default withPrismicUnpublishedPreview(withPrismicPreview(Blogpage))
 
 export const query = graphql`
   query ($lang: String, $id: String, $uid: String) {

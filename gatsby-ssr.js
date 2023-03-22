@@ -15,23 +15,26 @@ import {
 } from "gatsby-plugin-prismic-previews"
 
 import { linkResolver } from "./src/utils/linkResolver"
+import { PrismicProvider } from "@prismicio/react"
 
 import Homepage from "./src/templates/homepage"
 import Blogpage from "./src/templates/blogpage"
 
 export const wrapRootElement = ({ element }) => (
-  <PrismicPreviewProvider
-    repositoryConfigs={[
-      {
-        repositoryName: "tsredi",
-        linkResolver,
-        componentResolver: componentResolverFromMap({
-          homepage: Homepage,
-          blogpage: Blogpage,
-        }),
-      },
-    ]}
-  >
-    {element}
-  </PrismicPreviewProvider>
+  <PrismicProvider linkResolver={linkResolver}>
+    <PrismicPreviewProvider
+      repositoryConfigs={[
+        {
+          repositoryName: "tsredi",
+          linkResolver,
+          componentResolver: componentResolverFromMap({
+            homepage: Homepage,
+            blogpage: Blogpage,
+          }),
+        },
+      ]}
+    >
+      {element}
+    </PrismicPreviewProvider>
+  </PrismicProvider>
 )

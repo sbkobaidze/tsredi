@@ -6,8 +6,10 @@ import { SliceZone } from "@prismicio/react"
 import { PrismicProvider } from "@prismicio/react"
 import { components } from "../slices/index"
 import Layout from "../components/layout"
-import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
-
+import {
+  withPrismicPreview,
+  withPrismicUnpublishedPreview,
+} from "gatsby-plugin-prismic-previews"
 const Homepage = ({ data }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}
@@ -33,7 +35,7 @@ export const Head = ({ data }) => (
   </>
 )
 
-export default withPrismicPreview(Homepage)
+export default withPrismicUnpublishedPreview(withPrismicPreview(Homepage))
 
 export const query = graphql`
   query ($lang: String) {
