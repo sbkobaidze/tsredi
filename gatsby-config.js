@@ -61,7 +61,8 @@ module.exports = {
         repositoryName: "tsredi",
         accessToken:
           "MC5aQUNONXhBQUFPLVZjWTRF.77-977-9XO-_vVPvv73vv73vv71a77-9QO-_vT1-dlZi77-9fhhtU--_ve-_vXjvv71W77-977-9Fu-_ve-_vQ",
-        customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+        customTypesApiToken:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6InRzcmVkaS04MTdjNGE3OC1iNjBhLTRmN2EtYjNkMy04OWQ1ZTkzOThlYjlfNCIsImRhdGUiOjE2Nzc3NTc5NjAsImRvbWFpbiI6InRzcmVkaSIsImlhdCI6MTY3Nzc1Nzk2MH0.g4Eq6fgTB52go6fVjJUwDWr8NJpBGBG3nY95iP0L-_Y",
         linkResolver: require("./src/utils/linkResolver").linkResolver,
       },
     },
