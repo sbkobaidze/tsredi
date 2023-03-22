@@ -1,0 +1,55 @@
+{
+  "Main": {
+    "logo": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 150,
+          "height": 50
+        },
+        "thumbnails": [],
+        "label": "logo"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "navbar": [
+            {
+              "display": "Navbar",
+              "name": "navbar"
+            }
+          ]
+        },
+        "choices": {
+          "navbar": {
+            "type": "Slice",
+            "fieldset": "Navbar",
+            "description": "Navbar",
+            "icon": "add_alert",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "header": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "header"
+                }
+              },
+              "link": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "link"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

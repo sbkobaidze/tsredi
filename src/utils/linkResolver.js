@@ -1,4 +1,4 @@
-const { defaultLanguage } = require("../../prismic-config")
+const { defaultLanguage } = require("../../prismic/prismic-config")
 
 exports.linkResolver = doc => {
   if (doc.type === "blog") {

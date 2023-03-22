@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import LanguageSwitcher from "./languageswitcher"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { scrollToDiv } from "../utils/divScroller"
-import { defaultLanguage } from "../../prismic-config"
+import { defaultLanguage } from "../../prismic/prismic-config"
 
 const Header = ({ headerData, context }) => {
   const [theme, changeTheme] = useState("dark")

@@ -19,7 +19,7 @@ export const Projects = ({ slice }) => {
     return (
       <motion.div
         key={index}
-        className="projectscard relative border-white border-2 border-b-0 w-[400px] sm:w-[200px] h-[300px] font-main flex flex-col gap-3 text-white aspect-[1/1.6] hid "
+        className="projectscard relative border-white border-2 border-b-0 w-[400px] sm:w-[200px] h-[300px] font-main flex flex-col gap-3 text-white aspect-[1/1.6] hid hidden "
       >
         <div className="card-content">
           <h3 className="text-3xl">{card.projectheader.text.toUpperCase()}</h3>
@@ -58,7 +58,7 @@ export const Projects = ({ slice }) => {
     )
   })
   return (
-    <div className="bg-secondary w-full h-min-[70vh] font-main">
+    <div className="bg-secondary w-full h-min-[70vh] font-main hidden">
       <div className=" w-[80%]  m-auto">
         <div className="w-full  bg-[linear-gradient(90deg,#6E45E1,#89D4CF)] rounded-xl flex-col pt-5 ">
           <div className="header text-white text-5xl sm:text-4xl pb-10 px-10 uppercase font-semibold ">

@@ -23,8 +23,11 @@ svg {
 .white {
   fill: #ffffff;
 }
-
+.authorcreds span {
+  color: white !important;
+}
 .moon-circle {
+  --transl: 50px;
   transform: translateX(var(--transl));
   transition: all 0.1s ease;
 }

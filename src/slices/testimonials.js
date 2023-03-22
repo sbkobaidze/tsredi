@@ -19,7 +19,11 @@ export const Testimonials = ({ slice }) => {
           </p>
         </div>
         <div className="testimonial-author pt-3">
-          <User name={testimonial.name.text} className="testich">
+          <User
+            name={testimonial.name.text}
+            className="authorcreds"
+            style={{ color: "white" }}
+          >
             <UserLink href={testimonial.brandlink.url}>
               {"@" + testimonial.brand.text}
             </UserLink>

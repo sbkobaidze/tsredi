@@ -4,7 +4,7 @@ import { Text } from "@geist-ui/core"
 import Image from "@geist-ui/core/esm/image/image"
 import CardFooter from "@geist-ui/core/esm/card/card-footer"
 import { navigate } from "gatsby"
-import { defaultLanguage } from "../../../prismic-config"
+import { defaultLanguage } from "../../../prismic/prismic-config"
 
 const BlogCard = ({ title, image, date, uid, lang }) => {
   const handleChange = e => {
