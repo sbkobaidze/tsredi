@@ -6,6 +6,8 @@ import { SliceZone } from "@prismicio/react"
 import { PrismicProvider } from "@prismicio/react"
 import { components } from "../slices/index"
 import Layout from "../components/layout"
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
+
 const Homepage = ({ data }) => {
   const document = data.prismicHomepage || {}
   const footer = data.prismicFooter || {}

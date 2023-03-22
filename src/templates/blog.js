@@ -9,6 +9,7 @@ import BlogBottom from "../components/blog/main/blogmainbottom"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Copyright from "../components/copyright"
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews"
 
 const Blog = ({ data }) => {
   const blogData = data.prismicBlogmain.data || {}
