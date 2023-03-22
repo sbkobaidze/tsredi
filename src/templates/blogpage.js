@@ -54,6 +54,7 @@ export default withPrismicUnpublishedPreview(withPrismicPreview(Blogpage))
 export const query = graphql`
   query ($lang: String, $id: String, $uid: String) {
     prismicBlog(lang: { eq: $lang }, id: { eq: $id }) {
+      _previewable
       alternate_languages {
         lang
         id
