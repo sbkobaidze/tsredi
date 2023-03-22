@@ -58,8 +58,9 @@ module.exports = {
     {
       resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        repositoryName: "tsredi",
+        accessToken:
+          "MC5aQUNONXhBQUFPLVZjWTRF.77-977-9XO-_vVPvv73vv73vv71a77-9QO-_vT1-dlZi77-9fhhtU--_ve-_vXjvv71W77-977-9Fu-_ve-_vQ",
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         linkResolver: require("./src/utils/linkResolver").linkResolver,
       },
@@ -67,8 +68,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-prismic-previews",
       options: {
-        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-        accessToken: process.env.PRISMIC_PREVIEWS,
+        repositoryName: "tsredi",
+        accessToken:
+          "MC5aQlFRa0JBQUFDRUFZQ1NN.bRPvv73vv71277-9NO-_vSbvv71_77-9ODzvv71TeHkmWk3vv70bLCcR77-977-977-977-977-9OQ",
         linkResolver: require("./src/utils/linkResolver").linkResolver,
         releaseId: process.env.PRISMIC_RELEASE_ID,
       },
