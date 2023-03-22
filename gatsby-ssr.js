@@ -23,11 +23,11 @@ export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider
     repositoryConfigs={[
       {
-        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        repositoryName: "tsredi",
         linkResolver,
         componentResolver: componentResolverFromMap({
-          Homepage: Homepage,
-          Blog: Blogpage,
+          homepage: Homepage,
+          blogpage: Blogpage,
         }),
       },
     ]}

@@ -3,12 +3,6 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Kanit&family=Oswald&family=Poppins&display=swap");
 
-:root {
-  --light-color: #dbff01;
-  --dark: "#FFF";
-  --transl: 40px;
-}
-
 svg {
   cursor: pointer;
 }
@@ -84,41 +78,10 @@ svg {
   transform: rotate(-45deg) translate(35px, 35px);
 }
 
-.custom-shape-divider-bottom-1673879611 {
-  display: flex;
-  align-items: flex-end;
-  height: 100vh;
-  width: 100%;
-  line-height: 0;
-  overflow: hidden;
-
-  fill: #d9d9d9;
-  pointer-events: none;
-  border: none;
-}
-
 #visual {
   width: 100vw;
 }
-.custom-shape-divider-top-1673962769 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
 
-.custom-shape-divider-top-1673962769 svg {
-  position: relative;
-  display: block;
-  width: calc(248% + 1.3px);
-  height: 127px;
-}
-
-.custom-shape-divider-top-1673962769 .shape-fill {
-  fill: #d9d9d9;
-}
 .testimonial-curve {
   position: absolute;
   top: 0;
@@ -131,71 +94,10 @@ html {
   scroll-behavior: smooth;
 }
 
-.test-swiper .swiper {
-  height: 170px;
-}
-
-@media screen and (max-width: 900px) {
-  .test-swiper .swiper {
-    padding-top: 50px;
-
-    height: 320px;
-    width: 350px;
-  }
-}
-
-.diper .swiper {
-  display: flex;
-  justify-content: center;
-  width: 100% !important;
-}
-
-.diper .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
 #outlined-basic {
   outline-color: white;
 }
 
-.cls-1 {
-  fill: none;
-}
-
-.cls-1,
-.cls-2,
-.cls-3,
-.cls-4 {
-  stroke-width: 5px;
-}
-
-.cls-1,
-.cls-2,
-.cls-3,
-.cls-4,
-.cls-5 {
-  stroke-miterlimit: 10;
-}
-
-.cls-1,
-.cls-2,
-.cls-4,
-.cls-5 {
-  stroke: #fff;
-}
-
-.cls-2,
-.cls-5 {
-  fill: #fff;
-}
-
-.cls-3 {
-  fill: #faefa4;
-  stroke: #faef64;
-}
-
-.cls-4 {
-  fill: #f7ec13;
-}
 #Layer_1 {
   vertical-align: baseline !important;
 }
@@ -240,13 +142,9 @@ html {
   text-decoration: underline;
 }
 
-.testich * {
-  color: #ffffff !important;
-}
-
 html,
 body {
-  width: 100wv;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -320,13 +218,7 @@ body {
   color: white;
 }
 
-#testlogo {
-  --screen-size: 0px;
-}
-.testlogo {
-  transition: all;
-}
-
+/*projects card */
 .projectscard:before {
   background: linear-gradient(90deg, #6e45e1, #89d4cf);
   background-position: 0% 0%;

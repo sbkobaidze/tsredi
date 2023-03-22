@@ -33,7 +33,7 @@ export const Head = ({ data }) => (
   </>
 )
 
-export default Homepage
+export default withPrismicPreview(Homepage)
 
 export const query = graphql`
   query ($lang: String) {
