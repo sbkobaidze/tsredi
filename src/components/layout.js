@@ -4,10 +4,10 @@ import Footer from "./footer"
 import Copyright from "./copyright"
 import Chatbot from "./chatbot"
 
-const Layout = ({ children, footerData, headerData, context }) => {
+const Layout = ({ children, footerData, headerData, document }) => {
   return (
     <>
-      <Header headerData={headerData} context={context} />
+      <Header headerData={headerData} data={document} />
       <Chatbot />
       <main>{children}</main>
       <Footer footerData={footerData} />

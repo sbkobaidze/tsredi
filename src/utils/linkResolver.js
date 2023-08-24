@@ -13,6 +13,12 @@ exports.linkResolver = doc => {
       : `/${doc.lang.slice(0, doc.lang.indexOf("-"))}/blog`
   }
 
+  if (doc.type === "contact") {
+    return doc.lang === defaultLanguage
+      ? `/contact`
+      : `/${doc.lang.slice(0, doc.lang.indexOf("-"))}/contact`
+  }
+
   if (doc.type === "homepage") {
     return doc.lang === defaultLanguage
       ? "/"

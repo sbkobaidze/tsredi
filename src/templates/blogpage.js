@@ -5,6 +5,8 @@ import Articles from "../components/blog/page/articles"
 import BlogStory from "../components/blog/page/blogstory"
 import PopularBlogArticles from "../components/blog/page/popularblogarticles"
 import Seo from "../components/seo"
+import "../components/layout.css"
+
 import {
   withPrismicPreview,
   withPrismicUnpublishedPreview,
@@ -19,7 +21,7 @@ const Blogpage = ({ data }) => {
 
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Layout footerData={footer} context={dc} headerData={navbar}>
+      <Layout footerData={footer} document={dc} headerData={navbar}>
         <Articles title={dc.data.blogtitle.text} image={dc.data.blogimage} />
 
         <BlogStory

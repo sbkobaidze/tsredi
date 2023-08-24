@@ -4,6 +4,8 @@ import { navigate } from "gatsby"
 import { linkResolver } from "../utils/linkResolver"
 
 const LanguageSwitcher = ({ lang, altLang }) => {
+
+  console.log(lang,altLang)
   const currentLangOption = (
     //render the current language
     <option value={lang}>{lang.slice(0, 2).toUpperCase()}</option>
@@ -16,8 +18,9 @@ const LanguageSwitcher = ({ lang, altLang }) => {
   ))
 
   const handleLangChange = e => {
-    navigate(e.target.value)
     console.log(e)
+
+    navigate(e.target.value)
   }
 
   return (

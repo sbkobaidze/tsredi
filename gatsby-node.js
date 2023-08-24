@@ -5,6 +5,7 @@
  */
 
 const path = require("path")
+
 // const bodyParser = require("body-parser")
 // const uuid = require("uuid")
 // const cors = require("cors")({ origin: true })
@@ -83,6 +84,14 @@ exports.createPages = async ({ graphql, actions }) => {
           uid
         }
       }
+      allPrismicContact {
+        nodes {
+          lang
+          url
+          id
+          uid
+        }
+      }
       allPrismicBlog {
         nodes {
           uid
@@ -134,4 +143,32 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  queryData.data.allPrismicContact.nodes.forEach(page => {
+    createPage({
+      path: page.uid.replace("_", "/"),
+      component: path.resolve(__dirname, "src/templates/contact.js"),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
 }
+
+
+// exports.onCreateDevServer = ({ app }) => {
+//   app.post('/email', function (req, res) {
+
+//     const email =  resend.emails.send({
+//       from: 'noreply@tsredi.com',
+//       to: 'sbkobaidze@gmail.com',
+//       subject: 'Hello World',
+//       react: <div>test</div>
+//   });
+  
+//   console.log(email)
+//     res.send('hello world')
+//   })
+// }
+
+

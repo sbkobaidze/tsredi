@@ -5,18 +5,18 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { scrollToDiv } from "../utils/divScroller"
 import { defaultLanguage } from "../../prismic/prismic-config"
 
-const Header = ({ headerData, context }) => {
+const Header = ({ headerData, data }) => {
   const [theme, changeTheme] = useState("dark")
   const [mobilenav, changeNav] = useState("wop")
+  
 
   const pageHeaders = headerData.body[0].items.map((item, index) => {
-    if (item.link.text === "blog") {
-      if (defaultLanguage === context.lang) {
+    if (item.link.text == "blog" || item.link.text == "contact" ) {
+      if (defaultLanguage === data.lang) {
         return (
           <Link
             to={`/${item.link.text.toLowerCase()}`}
             key={index}
-            onClick={e => scrollToDiv(item.link.text)}
             style={{
               margin: "0 5px",
               fontFamily: "Kanit",
@@ -33,7 +33,6 @@ const Header = ({ headerData, context }) => {
           <Link
             to={`/ka/${item.link.text.toLowerCase()}`}
             key={index}
-            onClick={e => scrollToDiv(item.link.text)}
             style={{
               margin: "0 5px",
               fontFamily: "Kanit",
@@ -47,7 +46,7 @@ const Header = ({ headerData, context }) => {
         )
       }
     } else {
-      if (defaultLanguage === context.lang) {
+      if (defaultLanguage === data.lang) {
         return (
           <Link
             to={`/#${item.link.text.toLowerCase()}`}
@@ -86,9 +85,10 @@ const Header = ({ headerData, context }) => {
   })
 
   useEffect(() => {
-    if (window !== "undefined") {
+    
+    if (typeof window != undefined) {
       if (theme === "dark") {
-        document.documentElement.classList.add("dark")
+        document?.documentElement?.classList.add("dark")
         document.getElementById("overlay").classList.add("overlay-hide")
         document.getElementById("circle").classList.add("white")
         document.querySelector(".moon-circle").classList.add("real-moon")
@@ -135,8 +135,8 @@ const Header = ({ headerData, context }) => {
         <ul className={" block text-xl font-semibold"}>
           {pageHeaders}
           <LanguageSwitcher
-            lang={context.lang}
-            altLang={context.alternate_languages}
+            lang={data.lang}
+            altLang={data.alternate_languages}
           />
         </ul>
       </div>
@@ -156,8 +156,8 @@ const Header = ({ headerData, context }) => {
               {pageHeaders}
               <li className="mx-3 ">
                 <LanguageSwitcher
-                  lang={context.lang}
-                  altLang={context.alternate_languages}
+                  lang={data.lang}
+                  altLang={data.alternate_languages}
                 />
               </li>
             </ul>

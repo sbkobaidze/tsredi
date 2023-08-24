@@ -6,6 +6,8 @@ import { Canvas } from "@react-three/fiber"
 import Starbackground from "../components/Animations/Starbackground"
 import { scrollToDiv } from "../utils/divScroller"
 
+import { navigate } from "gatsby"
+
 export const Hero = ({ slice }) => {
   const heroData = slice.primary
 
@@ -80,9 +82,9 @@ export const Hero = ({ slice }) => {
           </h1>
           <div className="block">
             <Button
+              onClick = {() => navigate('contact')}
               sx={{ color: "white", fontWeight: "bold" }}
-              className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]  my-2 font-main  w-60 h-16 border-3"
-              onClick={e => scrollToDiv("contact")}
+              className="bg-[linear-gradient(135deg,#FFDD00,#Fbb034)]  my-2 font-main  w-60 h-16 border-3 textl-2xl"
             >
               {heroData.button.text}
             </Button>

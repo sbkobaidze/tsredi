@@ -254,3 +254,6 @@ body {
 .projectscard:hover > .card-content {
   background-position: -10% 0%;
 }
+.jsx-281912145.link{
+  color: black,  !important;
+}

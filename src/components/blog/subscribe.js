@@ -1,14 +1,11 @@
 import React from "react"
 import NewsletterAnimation from "../Animations/icons8-subscribe.json"
 import Lottie from "lottie-react"
-import { firestore } from "../../utils/firebase"
-import { addDoc, collection } from "@firebase/firestore"
 import { Card, Input, Button } from "@geist-ui/core"
 import { useState } from "react"
 import { toast } from "react-toastify"
 
 const Subscribe = ({ newsLetterData }) => {
-  const data = collection(firestore, "users")
 
   const [inputMsg, updateMsg] = useState("")
   const [loading, isLoading] = useState(false)
@@ -18,22 +15,22 @@ const Subscribe = ({ newsLetterData }) => {
   }
 
   //send data to firebase
-  const sendMsgToDB = async e => {
-    if (inputMsg.length < 4 || !inputMsg.includes("@")) {
-      return toast("Wrong email")
-    }
-    startPlaying(true)
+  // const sendMsgToDB = async e => {
+  //   if (inputMsg.length < 4 || !inputMsg.includes("@")) {
+  //     return toast("Wrong email")
+  //   }
+  //   startPlaying(true)
 
-    try {
-      isLoading(true)
-      await addDoc(data, { date: inputMsg })
-      startPlaying(false)
+  //   try {
+  //     isLoading(true)
+  //     await addDoc(data, { date: inputMsg })
+  //     startPlaying(false)
 
-      isLoading(false)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //     isLoading(false)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   return (
     <div>
@@ -57,7 +54,6 @@ const Subscribe = ({ newsLetterData }) => {
             onChange={e => inputState(e)}
           ></Input>
           <Button
-            onClick={sendMsgToDB}
             loading={loading}
             style={{
               margin: "10px 0",

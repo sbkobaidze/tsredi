@@ -9,6 +9,7 @@ const Footer = ({ footerData }) => {
     if (header.link.text === "blog") {
       return (
         <Link
+          key={header.link.text}
           to={"/" + header.link.text}
           onClick={e => scrollToDiv(header.link.text, e)}
         >

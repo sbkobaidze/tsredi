@@ -15,26 +15,27 @@ import {
 } from "gatsby-plugin-prismic-previews"
 
 const Blog = ({ data }) => {
-  const blogData = data.prismicBlogmain.data || {}
+  const blogData = data.prismicBlogmain || {}
   const footer = data.prismicFooter || {}
   const navbar = data.prismicHeader.data || {}
 
   const allBlogs = data.allPrismicBlog.nodes || {}
 
+
   return (
     <div className="dark:bg-black bg-[linear-gradient(135deg,#330867,#31a7bb)]">
-      <Header context={data.prismicBlogmain} headerData={navbar} />
+      <Header data={blogData} headerData={navbar} />
 
       <BlogHero
-        pageHeader={blogData.pageheader.text}
-        newsletter={blogData.body[0].primary}
+        pageHeader={blogData.data.pageheader.text}
+        newsletter={blogData.data.body[0].primary}
       />
       <ArticleContainer
-        pageHeader={blogData.secondheader.text}
+        pageHeader={blogData.data.secondheader.text}
         blogData={allBlogs}
         currentLang={data.prismicBlogmain.lang}
       />
-      <BlogBottom pageHeader={blogData.thirdheader.text} />
+      <BlogBottom pageHeader={blogData.data.thirdheader.text} />
       <Footer footerData={footer} />
       <Copyright />
     </div>

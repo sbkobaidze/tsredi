@@ -18,7 +18,7 @@ const Homepage = ({ data }) => {
   return (
     <div className="bg-[linear-gradient(135deg,#330867,#31a7bb)]">
       <PrismicProvider>
-        <Layout footerData={footer} context={document} headerData={navbar}>
+        <Layout footerData={footer} document={document} headerData={navbar}>
           <SliceZone components={components} slices={document.data.body} />
         </Layout>
       </PrismicProvider>

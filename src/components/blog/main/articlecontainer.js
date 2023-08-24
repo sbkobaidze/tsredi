@@ -46,7 +46,7 @@ const ArticleContainer = ({ pageHeader, blogData, currentLang }) => {
         <div className="card container  flex justify-center flex-wrap ">
           {currentLangBlogs.slice(0, 3).map(blog => {
             return (
-              <div className="w-[400px]">
+              <div className="w-[400px]" key={blog.id}>
                 <BlogCard
                   key={blog.id}
                   title={blog.data.blogtitle.text}
